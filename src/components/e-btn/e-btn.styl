@@ -1,0 +1,47 @@
+:host
+  display: block
+
+button
+  display flex
+  align-items center
+  gap 10px
+  transition 0.3s ease
+
+  line-height 150%
+
+  background white
+  color black
+  &:hover,&:active
+    background black
+    color white
+  &:focus
+    background white
+    color black
+    box-shadow 0 0 0 1px #CBD5E0
+  &.disabled
+    background #CBD5E0
+    color white
+  &.xs
+    font-size 12px
+    height 26px
+  &.sm
+    font-size 12px
+    height 32px
+  &.md
+    font-size 12px
+    height 38px
+  &.lg
+    font-size 14px
+    height 42px
+  &.xl
+    font-size 14px
+    height 46px
+  &.xll
+    font-size 16px
+    height 56px
+
+  border-radius 4px
+  &.rounded
+    border-radius 100px
+  border none
+  padding 4px 8px

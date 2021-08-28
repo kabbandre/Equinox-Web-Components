@@ -5,24 +5,58 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AvatarSizes } from "./types";
 export namespace Components {
-    interface MyComponent {
+    interface EAvatar {
+        "color": string;
+        "outlined": boolean;
+        "size": AvatarSizes;
+        "text"?: string;
+    }
+    interface EBtn {
         /**
-          * The first name
+          * Append icon
          */
-        "first": string;
+        "appendIcon"?: string;
         /**
-          * The last name
+          * Disable button
          */
-        "last": string;
+        "disabled"?: boolean;
         /**
-          * The middle name
+          * Turn button into the icon button
          */
-        "middle": string;
+        "icon"?: boolean;
         /**
-          * Just a random bool lol
+          * Prepend icon
          */
-        "test": boolean;
+        "prependIcon"?: string;
+        /**
+          * Make button edges rounded
+         */
+        "rounded"?: boolean;
+        /**
+          * Button size
+         */
+        "size"?: "xs" | "sm" | "md" | "lg" | "xl" | "xll";
+    }
+    interface ECheckbox {
+        "indeterminate": boolean;
+    }
+    interface EIcon {
+        /**
+          * Color of the icon
+         */
+        "color": string;
+        /**
+          * Icon from Phosphor Icons library
+         */
+        "icon": string;
+        /**
+          * Size of the icon
+         */
+        "size": string;
+    }
+    interface ERadio {
     }
     interface SimpleConfig {
         /**
@@ -56,11 +90,35 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLEAvatarElement extends Components.EAvatar, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLEAvatarElement: {
+        prototype: HTMLEAvatarElement;
+        new (): HTMLEAvatarElement;
+    };
+    interface HTMLEBtnElement extends Components.EBtn, HTMLStencilElement {
+    }
+    var HTMLEBtnElement: {
+        prototype: HTMLEBtnElement;
+        new (): HTMLEBtnElement;
+    };
+    interface HTMLECheckboxElement extends Components.ECheckbox, HTMLStencilElement {
+    }
+    var HTMLECheckboxElement: {
+        prototype: HTMLECheckboxElement;
+        new (): HTMLECheckboxElement;
+    };
+    interface HTMLEIconElement extends Components.EIcon, HTMLStencilElement {
+    }
+    var HTMLEIconElement: {
+        prototype: HTMLEIconElement;
+        new (): HTMLEIconElement;
+    };
+    interface HTMLERadioElement extends Components.ERadio, HTMLStencilElement {
+    }
+    var HTMLERadioElement: {
+        prototype: HTMLERadioElement;
+        new (): HTMLERadioElement;
     };
     interface HTMLSimpleConfigElement extends Components.SimpleConfig, HTMLStencilElement {
     }
@@ -69,28 +127,65 @@ declare global {
         new (): HTMLSimpleConfigElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "e-avatar": HTMLEAvatarElement;
+        "e-btn": HTMLEBtnElement;
+        "e-checkbox": HTMLECheckboxElement;
+        "e-icon": HTMLEIconElement;
+        "e-radio": HTMLERadioElement;
         "simple-config": HTMLSimpleConfigElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface EAvatar {
+        "color"?: string;
+        "outlined"?: boolean;
+        "size"?: AvatarSizes;
+        "text"?: string;
+    }
+    interface EBtn {
         /**
-          * The first name
+          * Append icon
          */
-        "first"?: string;
+        "appendIcon"?: string;
         /**
-          * The last name
+          * Disable button
          */
-        "last"?: string;
+        "disabled"?: boolean;
         /**
-          * The middle name
+          * Turn button into the icon button
          */
-        "middle"?: string;
+        "icon"?: boolean;
         /**
-          * Just a random bool lol
+          * Prepend icon
          */
-        "test"?: boolean;
+        "prependIcon"?: string;
+        /**
+          * Make button edges rounded
+         */
+        "rounded"?: boolean;
+        /**
+          * Button size
+         */
+        "size"?: "xs" | "sm" | "md" | "lg" | "xl" | "xll";
+    }
+    interface ECheckbox {
+        "indeterminate"?: boolean;
+    }
+    interface EIcon {
+        /**
+          * Color of the icon
+         */
+        "color"?: string;
+        /**
+          * Icon from Phosphor Icons library
+         */
+        "icon"?: string;
+        /**
+          * Size of the icon
+         */
+        "size"?: string;
+    }
+    interface ERadio {
     }
     interface SimpleConfig {
         /**
@@ -123,7 +218,11 @@ declare namespace LocalJSX {
         "startDate"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "e-avatar": EAvatar;
+        "e-btn": EBtn;
+        "e-checkbox": ECheckbox;
+        "e-icon": EIcon;
+        "e-radio": ERadio;
         "simple-config": SimpleConfig;
     }
 }
@@ -131,7 +230,11 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "e-avatar": LocalJSX.EAvatar & JSXBase.HTMLAttributes<HTMLEAvatarElement>;
+            "e-btn": LocalJSX.EBtn & JSXBase.HTMLAttributes<HTMLEBtnElement>;
+            "e-checkbox": LocalJSX.ECheckbox & JSXBase.HTMLAttributes<HTMLECheckboxElement>;
+            "e-icon": LocalJSX.EIcon & JSXBase.HTMLAttributes<HTMLEIconElement>;
+            "e-radio": LocalJSX.ERadio & JSXBase.HTMLAttributes<HTMLERadioElement>;
             "simple-config": LocalJSX.SimpleConfig & JSXBase.HTMLAttributes<HTMLSimpleConfigElement>;
         }
     }

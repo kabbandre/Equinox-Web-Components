@@ -1,0 +1,5 @@
+@import '../../assets/phosphor/css/phosphor.css';
+
+:host {
+  display: block;
+}

@@ -1,6 +1,6 @@
 import path from 'path';
 import Case from 'case';
-import { storiesOf } from '@storybook/html';
+import {storiesOf} from '@storybook/html';
 import * as KNOBS from '@storybook/addon-knobs';
 
 /*******************************************************************************
@@ -43,6 +43,7 @@ function getKnobForProp(prop, knobOptions = {}) {
 	const options = knobOptions[propCamel] || knobOptions[prop.attribute];
 
 	// if knob options are defined, use those
+
 	if (options) {
 		type = options.type;
 		args = args.concat(options.args);
@@ -93,28 +94,25 @@ function getKnobForProp(prop, knobOptions = {}) {
  */
 function getStencilTemplate({ title, description, tag, props }) {
   // build attribute="value" strings
-  const attrs = Object.keys(props || {})
-    .filter(prop => props[prop] != null)
-		.map(prop => {
-			return `${Case.kebab(prop)}={${JSON.stringify(props[prop])}}`;
-		})
-		.join(' ');
+  const attrs = Object.keys(props || {}).reduce((acc, prop) => {
+    if (typeof props[prop] === 'boolean') {
+      return props[prop] ? [...acc, Case.kebab(prop)] : acc
+    }
+    return !!props[prop] ? [...acc, `${Case.kebab(prop)}=${JSON.stringify(props[prop])}`] : acc
+  }, []).join(' ');
 
-	let template =
-		`
+  return `
         <h2>${title}</h2>
         ${description ? '<p>' + description + '</p>' : ''}
         <div class="placeholder">
         <!-- the component will be inserted here --></div>
         <div class="code-block">
             <pre><code>` +
-		`&lt;${tag}${attrs ? ' ' + attrs : ''}&gt;&lt;/${tag}&gt;` +
-		`</code></pre>
+    `&lt;${tag}${attrs ? ' ' + attrs : ''}&gt;&lt;/${tag}&gt;` +
+    `</code></pre>
             <a class="select-code">Select Code</a>
         </div>
     `;
-
-	return template;
 }
 
 /**
