@@ -22,6 +22,11 @@ export class MyComponent {
    */
   @Prop() last: string;
 
+  /**
+   * Just a random bool lol
+   */
+  @Prop() test: boolean;
+
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
