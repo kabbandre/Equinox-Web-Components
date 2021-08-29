@@ -1,7 +1,7 @@
 {
-  "name": "stencil-storybook-starter",
+  "name": "equinox-web-components",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Equinox design for the web using StencilJS",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/stencil-storybook-starter/stencil-storybook-starter.js",
+  "unpkg": "dist/equinox/equinox.js",
   "files": [
     "dist/",
     "loader/"
