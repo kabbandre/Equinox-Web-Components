@@ -23,9 +23,9 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
-          * Turn button into the icon button
+          * Turn button into the icon button. Pass icon code to this attribute.
          */
-        "icon"?: boolean;
+        "icon"?: string;
         /**
           * Prepend icon
          */
@@ -39,8 +39,35 @@ export namespace Components {
          */
         "size"?: "xs" | "sm" | "md" | "lg" | "xl" | "xll";
     }
+    interface ECard {
+        "backdrop": boolean;
+        "backdropBlur": "weak" | "medium" | "strong";
+        "dark": boolean;
+    }
+    interface EChatBox {
+        "appendIcon": string;
+        "backdrop": boolean;
+        "backdropBlur": "weak" | "medium" | "strong";
+        "dark": boolean;
+        "outerAppendIcon": string;
+        "outerPrependIcon": string;
+        "placeholder": string;
+        "prependIcon": string;
+        "type": string;
+        "value": string;
+    }
     interface ECheckbox {
         "indeterminate": boolean;
+    }
+    interface ECollapse {
+    }
+    interface EDescription {
+    }
+    interface EEntity {
+    }
+    interface EFeedback {
+    }
+    interface EFieldtree {
     }
     interface EIcon {
         /**
@@ -56,7 +83,19 @@ export namespace Components {
          */
         "size": string;
     }
+    interface EInput {
+    }
+    interface EMenu {
+    }
+    interface EModal {
+    }
+    interface EPreview {
+    }
     interface ERadio {
+    }
+    interface ESelect {
+    }
+    interface ETextarea {
     }
     interface SimpleConfig {
         /**
@@ -102,11 +141,53 @@ declare global {
         prototype: HTMLEBtnElement;
         new (): HTMLEBtnElement;
     };
+    interface HTMLECardElement extends Components.ECard, HTMLStencilElement {
+    }
+    var HTMLECardElement: {
+        prototype: HTMLECardElement;
+        new (): HTMLECardElement;
+    };
+    interface HTMLEChatBoxElement extends Components.EChatBox, HTMLStencilElement {
+    }
+    var HTMLEChatBoxElement: {
+        prototype: HTMLEChatBoxElement;
+        new (): HTMLEChatBoxElement;
+    };
     interface HTMLECheckboxElement extends Components.ECheckbox, HTMLStencilElement {
     }
     var HTMLECheckboxElement: {
         prototype: HTMLECheckboxElement;
         new (): HTMLECheckboxElement;
+    };
+    interface HTMLECollapseElement extends Components.ECollapse, HTMLStencilElement {
+    }
+    var HTMLECollapseElement: {
+        prototype: HTMLECollapseElement;
+        new (): HTMLECollapseElement;
+    };
+    interface HTMLEDescriptionElement extends Components.EDescription, HTMLStencilElement {
+    }
+    var HTMLEDescriptionElement: {
+        prototype: HTMLEDescriptionElement;
+        new (): HTMLEDescriptionElement;
+    };
+    interface HTMLEEntityElement extends Components.EEntity, HTMLStencilElement {
+    }
+    var HTMLEEntityElement: {
+        prototype: HTMLEEntityElement;
+        new (): HTMLEEntityElement;
+    };
+    interface HTMLEFeedbackElement extends Components.EFeedback, HTMLStencilElement {
+    }
+    var HTMLEFeedbackElement: {
+        prototype: HTMLEFeedbackElement;
+        new (): HTMLEFeedbackElement;
+    };
+    interface HTMLEFieldtreeElement extends Components.EFieldtree, HTMLStencilElement {
+    }
+    var HTMLEFieldtreeElement: {
+        prototype: HTMLEFieldtreeElement;
+        new (): HTMLEFieldtreeElement;
     };
     interface HTMLEIconElement extends Components.EIcon, HTMLStencilElement {
     }
@@ -114,11 +195,47 @@ declare global {
         prototype: HTMLEIconElement;
         new (): HTMLEIconElement;
     };
+    interface HTMLEInputElement extends Components.EInput, HTMLStencilElement {
+    }
+    var HTMLEInputElement: {
+        prototype: HTMLEInputElement;
+        new (): HTMLEInputElement;
+    };
+    interface HTMLEMenuElement extends Components.EMenu, HTMLStencilElement {
+    }
+    var HTMLEMenuElement: {
+        prototype: HTMLEMenuElement;
+        new (): HTMLEMenuElement;
+    };
+    interface HTMLEModalElement extends Components.EModal, HTMLStencilElement {
+    }
+    var HTMLEModalElement: {
+        prototype: HTMLEModalElement;
+        new (): HTMLEModalElement;
+    };
+    interface HTMLEPreviewElement extends Components.EPreview, HTMLStencilElement {
+    }
+    var HTMLEPreviewElement: {
+        prototype: HTMLEPreviewElement;
+        new (): HTMLEPreviewElement;
+    };
     interface HTMLERadioElement extends Components.ERadio, HTMLStencilElement {
     }
     var HTMLERadioElement: {
         prototype: HTMLERadioElement;
         new (): HTMLERadioElement;
+    };
+    interface HTMLESelectElement extends Components.ESelect, HTMLStencilElement {
+    }
+    var HTMLESelectElement: {
+        prototype: HTMLESelectElement;
+        new (): HTMLESelectElement;
+    };
+    interface HTMLETextareaElement extends Components.ETextarea, HTMLStencilElement {
+    }
+    var HTMLETextareaElement: {
+        prototype: HTMLETextareaElement;
+        new (): HTMLETextareaElement;
     };
     interface HTMLSimpleConfigElement extends Components.SimpleConfig, HTMLStencilElement {
     }
@@ -129,9 +246,22 @@ declare global {
     interface HTMLElementTagNameMap {
         "e-avatar": HTMLEAvatarElement;
         "e-btn": HTMLEBtnElement;
+        "e-card": HTMLECardElement;
+        "e-chat-box": HTMLEChatBoxElement;
         "e-checkbox": HTMLECheckboxElement;
+        "e-collapse": HTMLECollapseElement;
+        "e-description": HTMLEDescriptionElement;
+        "e-entity": HTMLEEntityElement;
+        "e-feedback": HTMLEFeedbackElement;
+        "e-fieldtree": HTMLEFieldtreeElement;
         "e-icon": HTMLEIconElement;
+        "e-input": HTMLEInputElement;
+        "e-menu": HTMLEMenuElement;
+        "e-modal": HTMLEModalElement;
+        "e-preview": HTMLEPreviewElement;
         "e-radio": HTMLERadioElement;
+        "e-select": HTMLESelectElement;
+        "e-textarea": HTMLETextareaElement;
         "simple-config": HTMLSimpleConfigElement;
     }
 }
@@ -152,9 +282,9 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Turn button into the icon button
+          * Turn button into the icon button. Pass icon code to this attribute.
          */
-        "icon"?: boolean;
+        "icon"?: string;
         /**
           * Prepend icon
          */
@@ -168,8 +298,40 @@ declare namespace LocalJSX {
          */
         "size"?: "xs" | "sm" | "md" | "lg" | "xl" | "xll";
     }
+    interface ECard {
+        "backdrop"?: boolean;
+        "backdropBlur"?: "weak" | "medium" | "strong";
+        "dark"?: boolean;
+    }
+    interface EChatBox {
+        "appendIcon"?: string;
+        "backdrop"?: boolean;
+        "backdropBlur"?: "weak" | "medium" | "strong";
+        "dark"?: boolean;
+        "onAppendClick"?: (event: CustomEvent<string>) => void;
+        "onOuterAppendClick"?: (event: CustomEvent<string>) => void;
+        "onOuterPrependClick"?: (event: CustomEvent<string>) => void;
+        "onPrependClick"?: (event: CustomEvent<string>) => void;
+        "onValueChange"?: (event: CustomEvent<any>) => void;
+        "outerAppendIcon"?: string;
+        "outerPrependIcon"?: string;
+        "placeholder"?: string;
+        "prependIcon"?: string;
+        "type"?: string;
+        "value"?: string;
+    }
     interface ECheckbox {
         "indeterminate"?: boolean;
+    }
+    interface ECollapse {
+    }
+    interface EDescription {
+    }
+    interface EEntity {
+    }
+    interface EFeedback {
+    }
+    interface EFieldtree {
     }
     interface EIcon {
         /**
@@ -185,7 +347,19 @@ declare namespace LocalJSX {
          */
         "size"?: string;
     }
+    interface EInput {
+    }
+    interface EMenu {
+    }
+    interface EModal {
+    }
+    interface EPreview {
+    }
     interface ERadio {
+    }
+    interface ESelect {
+    }
+    interface ETextarea {
     }
     interface SimpleConfig {
         /**
@@ -220,9 +394,22 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "e-avatar": EAvatar;
         "e-btn": EBtn;
+        "e-card": ECard;
+        "e-chat-box": EChatBox;
         "e-checkbox": ECheckbox;
+        "e-collapse": ECollapse;
+        "e-description": EDescription;
+        "e-entity": EEntity;
+        "e-feedback": EFeedback;
+        "e-fieldtree": EFieldtree;
         "e-icon": EIcon;
+        "e-input": EInput;
+        "e-menu": EMenu;
+        "e-modal": EModal;
+        "e-preview": EPreview;
         "e-radio": ERadio;
+        "e-select": ESelect;
+        "e-textarea": ETextarea;
         "simple-config": SimpleConfig;
     }
 }
@@ -232,9 +419,22 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "e-avatar": LocalJSX.EAvatar & JSXBase.HTMLAttributes<HTMLEAvatarElement>;
             "e-btn": LocalJSX.EBtn & JSXBase.HTMLAttributes<HTMLEBtnElement>;
+            "e-card": LocalJSX.ECard & JSXBase.HTMLAttributes<HTMLECardElement>;
+            "e-chat-box": LocalJSX.EChatBox & JSXBase.HTMLAttributes<HTMLEChatBoxElement>;
             "e-checkbox": LocalJSX.ECheckbox & JSXBase.HTMLAttributes<HTMLECheckboxElement>;
+            "e-collapse": LocalJSX.ECollapse & JSXBase.HTMLAttributes<HTMLECollapseElement>;
+            "e-description": LocalJSX.EDescription & JSXBase.HTMLAttributes<HTMLEDescriptionElement>;
+            "e-entity": LocalJSX.EEntity & JSXBase.HTMLAttributes<HTMLEEntityElement>;
+            "e-feedback": LocalJSX.EFeedback & JSXBase.HTMLAttributes<HTMLEFeedbackElement>;
+            "e-fieldtree": LocalJSX.EFieldtree & JSXBase.HTMLAttributes<HTMLEFieldtreeElement>;
             "e-icon": LocalJSX.EIcon & JSXBase.HTMLAttributes<HTMLEIconElement>;
+            "e-input": LocalJSX.EInput & JSXBase.HTMLAttributes<HTMLEInputElement>;
+            "e-menu": LocalJSX.EMenu & JSXBase.HTMLAttributes<HTMLEMenuElement>;
+            "e-modal": LocalJSX.EModal & JSXBase.HTMLAttributes<HTMLEModalElement>;
+            "e-preview": LocalJSX.EPreview & JSXBase.HTMLAttributes<HTMLEPreviewElement>;
             "e-radio": LocalJSX.ERadio & JSXBase.HTMLAttributes<HTMLERadioElement>;
+            "e-select": LocalJSX.ESelect & JSXBase.HTMLAttributes<HTMLESelectElement>;
+            "e-textarea": LocalJSX.ETextarea & JSXBase.HTMLAttributes<HTMLETextareaElement>;
             "simple-config": LocalJSX.SimpleConfig & JSXBase.HTMLAttributes<HTMLSimpleConfigElement>;
         }
     }

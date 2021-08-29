@@ -163,7 +163,7 @@ function getPropsWithKnobValues(Component, knobOptions = {}) {
  *     }
  *   }
  */
-function createStencilStory({ Component, notes, states, knobs }, stories) {
+function createStencilStory({ Component, notes, states, knobs}, stories) {
 	// It is important that the main container element
 	// is NOT created inside of the render function below!!
 	const mainEl = document.createElement('div');
@@ -172,11 +172,13 @@ function createStencilStory({ Component, notes, states, knobs }, stories) {
 
 	// Clone the "states" array and add the default state first
 	states = states && states.length ? states.slice(0) : [];
-	states.unshift({
-		title: 'Default state (use Knobs below to edit props):',
-		tag: Component.is,
-		props: {},
-	});
+	if (!states.length) {
+    states.unshift({
+      title: 'Default state (use Knobs below to edit props):',
+      tag: Component.is,
+      props: {},
+    });
+  }
 
 	// Create the story with all of the states
 	stories.add(
@@ -191,7 +193,7 @@ function createStencilStory({ Component, notes, states, knobs }, stories) {
 			// Next, render each state. Only the first one is interactive (with knobs).
 			// This is sort of a light-weight "chapters" addon because the community
 			// "chapters" addon only works with react :/
-			states.forEach(({ title, description, props }) => {
+			states.forEach(({ title, description, props, content, containerStyle }) => {
 				const containerEl = document.createElement('div');
 				const componentEl = document.createElement(tag);
 
@@ -203,10 +205,22 @@ function createStencilStory({ Component, notes, states, knobs }, stories) {
 					title,
 					description,
 					tag,
-					props,
+					props
         });
+        //
+				// if (content) {
+        //   // const dom = new DOMParser().parseFromString(content, "text/xml");
+        //   console.log(componentEl.shadowRoot) //.innerHTML = content
+        // }
 
-				containerEl.querySelector(`.placeholder`).appendChild(componentEl);
+        const placeholder = containerEl.querySelector(`.placeholder`)
+
+        placeholder.appendChild(componentEl);
+				if (containerStyle) {
+				  Object.entries(containerStyle).forEach(([prop, val]) => {
+            placeholder.style[prop] = val
+          })
+        }
 				mainEl.appendChild(containerEl);
 			});
 

@@ -15,9 +15,9 @@ export class EBtn {
    */
   @Prop() disabled?: boolean
   /**
-   * Turn button into the icon button
+   * Turn button into the icon button. Pass icon code to this attribute.
    */
-  @Prop() icon?: boolean
+  @Prop() icon?: string = "ph-plus"
   /**
    * Button size
    */
@@ -34,23 +34,36 @@ export class EBtn {
   private classes = () => ({
     rounded: this.rounded,
     disabled: this.disabled,
+    icon: !!this.icon,
     [this.size]: true
   })
 
   private renderIcon = (icon) => (icon && <e-icon icon={icon} />)
 
-  render() {
-    return (
-      <button class={this.classes()}>
+  private renderContent = () => {
+    if (this.icon) {
+      return (
+        <e-icon icon={this.icon} />
+      )
+    } else {
+      return [
         <slot name="prepend-icon">
           {this.renderIcon(this.prependIcon)}
-        </slot>
+        </slot>,
         <slot>
           Eclipse
-        </slot>
+        </slot>,
         <slot name="append-icon">
           {this.renderIcon(this.appendIcon)}
         </slot>
+      ]
+    }
+  }
+
+  render() {
+    return (
+      <button class={this.classes()}>
+        {this.renderContent()}
       </button>
     );
   }

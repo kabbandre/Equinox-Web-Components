@@ -1,0 +1,31 @@
+@import '../../../public/global.css';
+
+:host {
+  display: block;
+}
+
+.e-chat-box
+  border 1px solid var(--gray-200)
+  box-sizing border-box
+  border-radius 100px
+  display flex
+  justify-content center
+  gap 12px
+  padding 28px 24px
+  input
+    background transparent
+    width 100%
+    border none
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--gray-500)
+    padding-top: 2px
+    &::placeholder
+      color: var(--gray-500)
+    &:focus-visible
+      outline none
+  &.dark
+    input
+      color: white !important
+      &::placeholder
+        color: white !important

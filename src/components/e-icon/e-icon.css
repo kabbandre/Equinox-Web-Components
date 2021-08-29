@@ -1,5 +1,8 @@
 @import '../../assets/phosphor/css/phosphor.css';
 
 :host {
-  display: block;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

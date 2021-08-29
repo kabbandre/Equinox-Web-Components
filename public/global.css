@@ -108,28 +108,28 @@ html {
 }
 
 /* Silicon */
-.silicon-light-wk {
+.silicon-light-weak {
   background: rgba(255, 255, 255, 0.13);
   backdrop-filter: blur(13px);
 }
-.silicon-light-md {
+.silicon-light-medium {
   background: rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(22px);
 }
-.silicon-light-st {
+.silicon-light-strong {
   background: rgba(255, 255, 255, 0.33);
   backdrop-filter: blur(33px);
 }
 
-.silicon-dark-wk {
+.silicon-dark-weak {
   background: rgba(0, 0, 0, 0.13);
   backdrop-filter: blur(13px);
 }
-.silicon-dark-md {
+.silicon-dark-medium {
   background: rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(22px);
 }
-.silicon-dark-st {
+.silicon-dark-strong {
   background: rgba(0, 0, 0, 0.33);
   backdrop-filter: blur(33px);
 }

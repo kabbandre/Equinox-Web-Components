@@ -1,4 +1,4 @@
-import {Component, Host, h, Prop} from '@stencil/core';
+import {Component, h, Prop} from '@stencil/core';
 
 @Component({
   tag: 'e-icon',
@@ -17,15 +17,10 @@ export class EIcon {
   /**
    * Size of the icon
    */
-  @Prop() size: string = "16px"
+  @Prop() size: string = "inherit"
 
   render() {
     const { color, size: fontSize } = this
-    return (
-      <Host>
-        <i class={this.icon} style={{color, fontSize}}/>
-      </Host>
-    );
+    return <i class={this.icon} style={{color, fontSize}}/>
   }
-
 }

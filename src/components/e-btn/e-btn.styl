@@ -4,6 +4,7 @@
 button
   display flex
   align-items center
+  justify-content center
   gap 10px
   transition 0.3s ease
 
@@ -21,27 +22,47 @@ button
   &.disabled
     background #CBD5E0
     color white
+  padding 4px 8px
   &.xs
     font-size 12px
     height 26px
+    &.icon
+      width 26px
   &.sm
     font-size 12px
     height 32px
+    &.icon
+      font-size 18px
+      width 32px
   &.md
     font-size 12px
     height 38px
+    &.icon
+      font-size 26px
+      width 38px
   &.lg
     font-size 14px
     height 42px
+    &.icon
+      font-size 30px
+      width 42px
   &.xl
     font-size 14px
     height 46px
+    &.icon
+      font-size 32px
+      width 46px
   &.xll
     font-size 16px
     height 56px
+    &.icon
+      font-size 32px
+      width 56px
+  &.icon
+    padding 0
+    border-radius 100%
 
   border-radius 4px
   &.rounded
     border-radius 100px
   border none
-  padding 4px 8px
