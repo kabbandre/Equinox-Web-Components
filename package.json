@@ -48,6 +48,21 @@
     "webpack": "^4.35.3"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kabbandre/Equinox-Web-Components.git"
+  },
+  "keywords": [
+    "Equinox",
+    "StencilJS",
+    "design",
+    "components"
+  ],
+  "author": "Mihails Jeremejevs",
+  "bugs": {
+    "url": "https://github.com/kabbandre/Equinox-Web-Components/issues"
+  },
+  "homepage": "https://equinox.kabba.me",
   "dependencies": {
     "@stencil/stylus": "^1.0.1"
   }
