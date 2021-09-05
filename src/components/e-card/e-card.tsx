@@ -6,9 +6,9 @@ import {Component, Host, h, Prop} from '@stencil/core';
   shadow: true,
 })
 export class ECard {
-  @Prop() backdrop = true
-  @Prop() dark: boolean
-  @Prop() backdropBlur: "weak" | "medium" | "strong"  = "weak"
+  @Prop({ reflect: true }) backdrop = true
+  @Prop({ reflect: true }) dark: boolean
+  @Prop({ reflect: true }) backdropBlur: "weak" | "medium" | "strong"  = "weak"
 
   private classes = () => {
     if (this.backdrop) {

@@ -18,7 +18,6 @@
     "./components/e-scroll/e-scroll.js",
     "./components/e-select/e-select.js",
     "./components/e-snip/e-snip.js",
-    "./components/e-switch/e-switch.js",
     "./components/e-tabs/e-tabs.js",
     "./components/e-textarea/e-textarea.js",
     "./components/simple-config/simple-config.js"

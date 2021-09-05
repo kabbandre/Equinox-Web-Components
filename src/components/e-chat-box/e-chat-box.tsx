@@ -15,9 +15,9 @@ export class EChatBox {
   @Prop() appendIcon = "ph-dots-three"
   @Prop() outerAppendIcon = "ph-paper-plane"
 
-  @Prop() backdrop = true
-  @Prop() dark: boolean = true
-  @Prop() backdropBlur: "weak" | "medium" | "strong"  = "weak"
+  @Prop({ reflect: true }) backdrop = true
+  @Prop({ reflect: true }) dark: boolean = true
+  @Prop({ reflect: true }) backdropBlur: "weak" | "medium" | "strong"  = "weak"
 
   private classes = () => {
     const classes = {

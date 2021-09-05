@@ -56,7 +56,12 @@ export namespace Components {
         "value": string;
     }
     interface ECheckbox {
+        "disabled": boolean;
+        "falseValue": ValueType;
         "indeterminate": boolean;
+        "rounded": boolean;
+        "trueValue": ValueType;
+        "type": "checkbox" | "switch";
         "value": boolean;
     }
     interface EChip {
@@ -129,8 +134,6 @@ export namespace Components {
     interface ESelect {
     }
     interface ESnip {
-    }
-    interface ESwitch {
     }
     interface ETabs {
         "tabs": string;
@@ -277,12 +280,6 @@ declare global {
         prototype: HTMLESnipElement;
         new (): HTMLESnipElement;
     };
-    interface HTMLESwitchElement extends Components.ESwitch, HTMLStencilElement {
-    }
-    var HTMLESwitchElement: {
-        prototype: HTMLESwitchElement;
-        new (): HTMLESwitchElement;
-    };
     interface HTMLETabsElement extends Components.ETabs, HTMLStencilElement {
     }
     var HTMLETabsElement: {
@@ -320,7 +317,6 @@ declare global {
         "e-scroll": HTMLEScrollElement;
         "e-select": HTMLESelectElement;
         "e-snip": HTMLESnipElement;
-        "e-switch": HTMLESwitchElement;
         "e-tabs": HTMLETabsElement;
         "e-textarea": HTMLETextareaElement;
         "simple-config": HTMLSimpleConfigElement;
@@ -381,8 +377,13 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface ECheckbox {
+        "disabled"?: boolean;
+        "falseValue"?: ValueType;
         "indeterminate"?: boolean;
         "onValueChanged"?: (event: CustomEvent<any>) => void;
+        "rounded"?: boolean;
+        "trueValue"?: ValueType;
+        "type"?: "checkbox" | "switch";
         "value"?: boolean;
     }
     interface EChip {
@@ -459,8 +460,6 @@ declare namespace LocalJSX {
     }
     interface ESnip {
     }
-    interface ESwitch {
-    }
     interface ETabs {
         "onTabSelected"?: (event: CustomEvent<Tab>) => void;
         "tabs"?: string;
@@ -516,7 +515,6 @@ declare namespace LocalJSX {
         "e-scroll": EScroll;
         "e-select": ESelect;
         "e-snip": ESnip;
-        "e-switch": ESwitch;
         "e-tabs": ETabs;
         "e-textarea": ETextarea;
         "simple-config": SimpleConfig;
@@ -544,7 +542,6 @@ declare module "@stencil/core" {
             "e-scroll": LocalJSX.EScroll & JSXBase.HTMLAttributes<HTMLEScrollElement>;
             "e-select": LocalJSX.ESelect & JSXBase.HTMLAttributes<HTMLESelectElement>;
             "e-snip": LocalJSX.ESnip & JSXBase.HTMLAttributes<HTMLESnipElement>;
-            "e-switch": LocalJSX.ESwitch & JSXBase.HTMLAttributes<HTMLESwitchElement>;
             "e-tabs": LocalJSX.ETabs & JSXBase.HTMLAttributes<HTMLETabsElement>;
             "e-textarea": LocalJSX.ETextarea & JSXBase.HTMLAttributes<HTMLETextareaElement>;
             "simple-config": LocalJSX.SimpleConfig & JSXBase.HTMLAttributes<HTMLSimpleConfigElement>;

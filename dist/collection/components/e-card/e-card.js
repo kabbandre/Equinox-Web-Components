@@ -48,7 +48,7 @@ export class ECard {
                 "text": ""
             },
             "attribute": "backdrop",
-            "reflect": false,
+            "reflect": true,
             "defaultValue": "true"
         },
         "dark": {
@@ -66,7 +66,7 @@ export class ECard {
                 "text": ""
             },
             "attribute": "dark",
-            "reflect": false
+            "reflect": true
         },
         "backdropBlur": {
             "type": "string",
@@ -83,7 +83,7 @@ export class ECard {
                 "text": ""
             },
             "attribute": "backdrop-blur",
-            "reflect": false,
+            "reflect": true,
             "defaultValue": "\"weak\""
         }
     }; }

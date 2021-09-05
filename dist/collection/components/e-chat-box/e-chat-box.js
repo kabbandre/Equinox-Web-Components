@@ -204,7 +204,7 @@ export class EChatBox {
                 "text": ""
             },
             "attribute": "backdrop",
-            "reflect": false,
+            "reflect": true,
             "defaultValue": "true"
         },
         "dark": {
@@ -222,7 +222,7 @@ export class EChatBox {
                 "text": ""
             },
             "attribute": "dark",
-            "reflect": false,
+            "reflect": true,
             "defaultValue": "true"
         },
         "backdropBlur": {
@@ -240,7 +240,7 @@ export class EChatBox {
                 "text": ""
             },
             "attribute": "backdrop-blur",
-            "reflect": false,
+            "reflect": true,
             "defaultValue": "\"weak\""
         }
     }; }
