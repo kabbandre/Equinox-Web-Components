@@ -1,6 +1,6 @@
 {
   "name": "equinox-web-components",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Equinox design for the web using StencilJS",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
