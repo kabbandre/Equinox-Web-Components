@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, g as getElement } from './index-ba575c47.js';
+import { r as registerInstance, c as createEvent, h, g as getElement } from './index-ab05bccf.js';
 var ERadioGroup = /** @class */ (function () {
     function ERadioGroup(hostRef) {
         registerInstance(this, hostRef);

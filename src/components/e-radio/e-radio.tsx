@@ -7,7 +7,7 @@ import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 })
 export class ERadio {
   @Prop() value!: string;
-  @Prop({ mutable: true }) checked = false;
+  @Prop({ mutable: true, reflect: true }) checked = false;
   @Event() valueChanged!: EventEmitter<void>;
   valueChangedHandler() {
     this.checked = true;

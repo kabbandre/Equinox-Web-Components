@@ -1,9 +1,10 @@
 import { EventEmitter } from '../../stencil-public-runtime';
 export declare class ECheckbox {
-    indeterminate: boolean;
+    checkboxInput: HTMLInputElement;
     value: boolean;
-    valueChanged: EventEmitter<boolean>;
-    valueChangedHandler(ev: any): void;
+    valueChanged: EventEmitter;
+    valueChangedHandler(checked: boolean): void;
+    indeterminate: boolean;
     private classes;
     render(): any;
 }

@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-ba575c47.js';
+import { r as registerInstance, h } from './index-ab05bccf.js';
 
 const SimpleConfig = class {
     constructor(hostRef) {

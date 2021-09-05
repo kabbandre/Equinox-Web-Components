@@ -1,1 +1,0 @@
-System.register(["./p-a7668941.system.js"],(function(t){"use strict";var e,r,n;return{setters:[function(t){e=t.r;r=t.h;n=t.H}],execute:function(){var s=t("e_scroll",function(){function t(t){e(this,t)}t.prototype.render=function(){return r(n,null,r("div",{style:{maxHeight:"200px",overflow:"auto"},class:"e-scroll"},r("slot",null)))};return t}())}}}));

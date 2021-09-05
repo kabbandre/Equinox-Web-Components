@@ -17,7 +17,7 @@ export class EInput {
 
   @Prop() placeholder: string
   @Prop() type: string = "text"
-  @Prop({ mutable: true }) value: string | number
+  @Prop({ mutable: true, reflect: true }) value: string | number
   @Event() valueChanged: EventEmitter<string | number>
   valueChangedHandler(ev) {
     this.value = ev.target ? ev.target.value : null

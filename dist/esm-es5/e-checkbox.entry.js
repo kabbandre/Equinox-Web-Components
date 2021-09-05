@@ -1,22 +1,22 @@
-import { r as registerInstance, c as createEvent, h } from './index-ba575c47.js';
+import { r as registerInstance, c as createEvent, h } from './index-ab05bccf.js';
 var eCheckboxCss = ":host{display:block}.container{display:block;position:relative;padding-left:36px;cursor:pointer;padding-top:2px;font-size:16px;line-height:150%;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.container input{position:absolute;opacity:0;cursor:pointer;height:0;width:0}.checkmark{-webkit-transition:.3s ease;transition:.3s ease;position:absolute;top:0;left:0;height:24px;width:24px;background-color:var(--gray-100);border-radius:4px;border:1px solid var(--gray-100)}.container:hover input~.checkmark{background-color:var(--gray-200)}.container input:checked~.checkmark{background-color:var(--primary)}.checkmark:after{content:\"\";position:absolute;display:none}.container input:checked~.checkmark:after{display:block}.container .checkmark:after{-webkit-transition:.3s ease;transition:.3s ease;width:100%;font-size:22px;color:#fff;text-align:center;font-family:\"Phosphor\";content:\"\\f0e7\"}.indeterminate.container .checkmark:after{content:\"\\f21a\"}";
 var ECheckbox = /** @class */ (function () {
     function ECheckbox(hostRef) {
         var _this = this;
         registerInstance(this, hostRef);
-        this.valueChanged = createEvent(this, "valueChanged", 7);
+        this.valueChanged = createEvent(this, "checkedChanged", 7);
+        this.value = false;
         this.classes = function () { return ({
             indeterminate: _this.indeterminate,
             container: true
         }); };
     }
-    ECheckbox.prototype.valueChangedHandler = function (ev) {
-        this.value = ev.target ? ev.target.value : null;
-        this.valueChanged.emit(this.value);
+    ECheckbox.prototype.valueChangedHandler = function (checked) {
+        this.valueChanged.emit(checked);
     };
     ECheckbox.prototype.render = function () {
         var _this = this;
-        return (h("label", { class: this.classes() }, h("slot", null), h("input", { onInput: function (ev) { return _this.valueChangedHandler(ev); }, type: "checkbox" }), h("span", { class: "checkmark" })));
+        return (h("label", { class: this.classes() }, h("slot", null), h("input", { checked: this.value, ref: function (el) { return _this.checkboxInput = el; }, onChange: function () { return _this.valueChangedHandler(_this.checkboxInput.checked); }, type: "checkbox" }), h("span", { class: "checkmark" })));
     };
     return ECheckbox;
 }());

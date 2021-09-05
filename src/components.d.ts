@@ -382,7 +382,7 @@ declare namespace LocalJSX {
     }
     interface ECheckbox {
         "indeterminate"?: boolean;
-        "onValueChanged"?: (event: CustomEvent<boolean>) => void;
+        "onCheckedChanged"?: (event: CustomEvent<any>) => void;
         "value"?: boolean;
     }
     interface EChip {

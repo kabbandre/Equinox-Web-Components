@@ -6,15 +6,13 @@ import {Component, Event, EventEmitter, h, Prop} from '@stencil/core';
   shadow: true,
 })
 export class ECheckbox {
-  @Prop() indeterminate: boolean
-
-  @Prop({ mutable: true }) value: boolean
-  @Event() valueChanged: EventEmitter<boolean>
-  valueChangedHandler(ev) {
-    this.value = ev.target ? ev.target.value : null
-    this.valueChanged.emit(this.value)
+  checkboxInput: HTMLInputElement;
+  @Prop({ mutable: true, reflect: true }) value: boolean = false;
+  @Event({ eventName: "checkedChanged", composed: true }) valueChanged: EventEmitter;
+  valueChangedHandler(checked: boolean) {
+    this.valueChanged.emit(checked);
   }
-
+  @Prop() indeterminate: boolean
   private classes = () => ({
     indeterminate: this.indeterminate,
     container: true
@@ -24,7 +22,11 @@ export class ECheckbox {
     return (
       <label class={this.classes()}>
         <slot />
-        <input onInput={(ev) => this.valueChangedHandler(ev)} type="checkbox" />
+        <input checked={this.value}
+               ref={el => this.checkboxInput = el}
+               onChange={() =>
+                 this.valueChangedHandler(this.checkboxInput.checked)
+               } type="checkbox" />
         <span class="checkmark"/>
       </label>
     );

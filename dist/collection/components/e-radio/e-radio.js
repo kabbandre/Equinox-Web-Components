@@ -54,7 +54,7 @@ export class ERadio {
                 "text": ""
             },
             "attribute": "checked",
-            "reflect": false,
+            "reflect": true,
             "defaultValue": "false"
         }
     }; }

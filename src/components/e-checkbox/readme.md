@@ -10,14 +10,14 @@
 | Property        | Attribute       | Description | Type      | Default     |
 | --------------- | --------------- | ----------- | --------- | ----------- |
 | `indeterminate` | `indeterminate` |             | `boolean` | `undefined` |
-| `value`         | `value`         |             | `boolean` | `undefined` |
+| `value`         | `value`         |             | `boolean` | `false`     |
 
 
 ## Events
 
-| Event          | Description | Type                   |
-| -------------- | ----------- | ---------------------- |
-| `valueChanged` |             | `CustomEvent<boolean>` |
+| Event            | Description | Type               |
+| ---------------- | ----------- | ------------------ |
+| `checkedChanged` |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------

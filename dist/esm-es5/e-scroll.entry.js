@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './index-ba575c47.js';
+import { r as registerInstance, h, H as Host } from './index-ab05bccf.js';
 var EScroll = /** @class */ (function () {
     function EScroll(hostRef) {
         registerInstance(this, hostRef);

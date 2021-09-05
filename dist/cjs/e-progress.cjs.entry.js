@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-977a8e5f.js');
+const index = require('./index-2969b752.js');
 
 const EProgress = class {
     constructor(hostRef) {

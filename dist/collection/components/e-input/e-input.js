@@ -190,7 +190,7 @@ export class EInput {
                 "text": ""
             },
             "attribute": "value",
-            "reflect": false
+            "reflect": true
         }
     }; }
     static get events() { return [{
