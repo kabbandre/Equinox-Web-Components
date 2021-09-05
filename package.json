@@ -22,7 +22,8 @@
     "watch": "stencil build --docs --watch",
     "storybook.run": "start-storybook -s ./public -p 9001",
     "storybook": "yarn build && npm-run-all --parallel watch storybook.run",
-    "build-static": "stencil build --docs && build-storybook -o ./_storybook -s ./public"
+    "build-static": "stencil build --docs && build-storybook -o ./_storybook -s ./public",
+    "publish:patch": "yarn build && npm version patch && npm publish"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
