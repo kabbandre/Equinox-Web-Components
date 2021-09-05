@@ -17,7 +17,14 @@
   scriptElm.setAttribute('data-stencil-namespace', 'equinox');
   doc.head.appendChild(scriptElm);
 
-  false
+  
+  scriptElm = doc.createElement('script');
+  scriptElm.setAttribute('nomodule', '');
+  scriptElm.src = url + '/equinox.js';
+  warn.push(scriptElm.outerHTML);
+  scriptElm.setAttribute('data-stencil-namespace', 'equinox');
+  doc.head.appendChild(scriptElm)
+  
   console.warn(warn.join('\n'));
 
 })(document);

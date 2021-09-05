@@ -1,0 +1,30 @@
+{
+  "entries": [
+    "./components/e-avatar/e-avatar.js",
+    "./components/e-btn/e-btn.js",
+    "./components/e-card/e-card.js",
+    "./components/e-chat-box/e-chat-box.js",
+    "./components/e-checkbox/e-checkbox.js",
+    "./components/e-collapse/e-collapse.js",
+    "./components/e-description/e-description.js",
+    "./components/e-entity/e-entity.js",
+    "./components/e-feedback/e-feedback.js",
+    "./components/e-fieldtree/e-fieldtree.js",
+    "./components/e-icon/e-icon.js",
+    "./components/e-input/e-input.js",
+    "./components/e-menu/e-menu.js",
+    "./components/e-modal/e-modal.js",
+    "./components/e-preview/e-preview.js",
+    "./components/e-radio/e-radio.js",
+    "./components/e-select/e-select.js",
+    "./components/e-textarea/e-textarea.js",
+    "./components/simple-config/simple-config.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.17.4",
+    "typescriptVersion": "3.9.7"
+  },
+  "collections": [],
+  "bundles": []
+}
