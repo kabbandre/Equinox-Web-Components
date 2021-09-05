@@ -3,15 +3,15 @@ var eRadioCss = ":host{display:block}.container{display:block;position:relative;
 var ERadio = /** @class */ (function () {
     function ERadio(hostRef) {
         registerInstance(this, hostRef);
-        this.input = createEvent(this, "input", 7);
+        this.valueChanged = createEvent(this, "valueChanged", 7);
     }
-    ERadio.prototype.inputHandler = function (ev) {
+    ERadio.prototype.valueChangedHandler = function (ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.input.emit(this.value);
+        this.valueChanged.emit(this.value);
     };
     ERadio.prototype.render = function () {
         var _this = this;
-        return (h("label", { class: "container" }, h("slot", null, "Eclipse"), h("input", { name: this.name, onInput: function (ev) { return _this.inputHandler(ev); }, type: "checkbox" }), h("span", { class: "checkmark" })));
+        return (h("label", { class: "container" }, h("slot", null, "Eclipse"), h("input", { name: this.name, onInput: function (ev) { return _this.valueChangedHandler(ev); }, type: "checkbox" }), h("span", { class: "checkmark" })));
     };
     return ERadio;
 }());

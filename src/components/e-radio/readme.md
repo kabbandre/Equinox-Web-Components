@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event   | Description | Type               |
-| ------- | ----------- | ------------------ |
-| `input` |             | `CustomEvent<any>` |
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `valueChanged` |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------

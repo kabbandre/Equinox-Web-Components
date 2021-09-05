@@ -9,10 +9,10 @@ export class ECheckbox {
   @Prop() indeterminate: boolean
 
   @Prop({ mutable: true }) value: boolean
-  @Event() input: EventEmitter<boolean>
-  inputHandler(ev) {
+  @Event() valueChanged: EventEmitter<boolean>
+  valueChangedHandler(ev) {
     this.value = ev.target ? ev.target.value : null
-    this.input.emit(this.value)
+    this.valueChanged.emit(this.value)
   }
 
   private classes = () => ({
@@ -24,7 +24,7 @@ export class ECheckbox {
     return (
       <label class={this.classes()}>
         <slot />
-        <input onInput={(ev) => this.inputHandler(ev)} type="checkbox" />
+        <input onInput={(ev) => this.valueChangedHandler(ev)} type="checkbox" />
         <span class="checkmark"/>
       </label>
     );

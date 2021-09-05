@@ -1,13 +1,13 @@
 import { Component, Event, h, Prop } from '@stencil/core';
 export class ERadio {
-    inputHandler(ev) {
+    valueChangedHandler(ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.input.emit(this.value);
+        this.valueChanged.emit(this.value);
     }
     render() {
         return (h("label", { class: "container" },
             h("slot", null, "Eclipse"),
-            h("input", { name: this.name, onInput: (ev) => this.inputHandler(ev), type: "checkbox" }),
+            h("input", { name: this.name, onInput: (ev) => this.valueChangedHandler(ev), type: "checkbox" }),
             h("span", { class: "checkmark" })));
     }
     static get is() { return "e-radio"; }
@@ -21,7 +21,7 @@ export class ERadio {
     static get properties() { return {
         "name": {
             "type": "string",
-            "mutable": false,
+            "mutable": true,
             "complexType": {
                 "original": "string",
                 "resolved": "string",
@@ -55,8 +55,8 @@ export class ERadio {
         }
     }; }
     static get events() { return [{
-            "method": "input",
-            "name": "input",
+            "method": "valueChanged",
+            "name": "valueChanged",
             "bubbles": true,
             "cancelable": true,
             "composed": true,

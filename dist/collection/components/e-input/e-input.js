@@ -12,15 +12,15 @@ export class EInput {
         });
         this.renderIcon = (icon) => (icon && h("e-icon", { size: "18px", icon: icon }));
     }
-    inputHandler(ev) {
+    valueChangedHandler(ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.input.emit(this.value);
+        this.valueChanged.emit(this.value);
     }
     render() {
         return (h(Host, null,
             h("div", { class: this.classes() },
                 h("slot", { name: "prepend-icon" }, this.renderIcon(this.prependIcon)),
-                h("input", { placeholder: this.placeholder, value: this.value, onInput: (ev) => this.inputHandler(ev) }),
+                h("input", { placeholder: this.placeholder, value: this.value, onInput: (ev) => this.valueChangedHandler(ev) }),
                 h("slot", { name: "append-icon" }, this.renderIcon(this.appendIcon)))));
     }
     static get is() { return "e-input"; }
@@ -194,8 +194,8 @@ export class EInput {
         }
     }; }
     static get events() { return [{
-            "method": "input",
-            "name": "input",
+            "method": "valueChanged",
+            "name": "valueChanged",
             "bubbles": true,
             "cancelable": true,
             "composed": true,

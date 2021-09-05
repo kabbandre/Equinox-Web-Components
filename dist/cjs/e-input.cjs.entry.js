@@ -9,7 +9,7 @@ const eInputCss = ":host{display:-ms-flexbox;display:flex}.input-wrapper{-webkit
 const EInput = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
-        this.input = index.createEvent(this, "input", 7);
+        this.valueChanged = index.createEvent(this, "valueChanged", 7);
         this.size = "md";
         this.type = "text";
         this.classes = () => ({
@@ -21,12 +21,12 @@ const EInput = class {
         });
         this.renderIcon = (icon) => (icon && index.h("e-icon", { size: "18px", icon: icon }));
     }
-    inputHandler(ev) {
+    valueChangedHandler(ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.input.emit(this.value);
+        this.valueChanged.emit(this.value);
     }
     render() {
-        return (index.h(index.Host, null, index.h("div", { class: this.classes() }, index.h("slot", { name: "prepend-icon" }, this.renderIcon(this.prependIcon)), index.h("input", { placeholder: this.placeholder, value: this.value, onInput: (ev) => this.inputHandler(ev) }), index.h("slot", { name: "append-icon" }, this.renderIcon(this.appendIcon)))));
+        return (index.h(index.Host, null, index.h("div", { class: this.classes() }, index.h("slot", { name: "prepend-icon" }, this.renderIcon(this.prependIcon)), index.h("input", { placeholder: this.placeholder, value: this.value, onInput: (ev) => this.valueChangedHandler(ev) }), index.h("slot", { name: "append-icon" }, this.renderIcon(this.appendIcon)))));
     }
 };
 EInput.style = eInputCss;

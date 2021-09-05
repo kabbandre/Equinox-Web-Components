@@ -22,9 +22,9 @@
 
 ## Events
 
-| Event   | Description | Type                            |
-| ------- | ----------- | ------------------------------- |
-| `input` |             | `CustomEvent<number \| string>` |
+| Event          | Description | Type                            |
+| -------------- | ----------- | ------------------------------- |
+| `valueChanged` |             | `CustomEvent<number \| string>` |
 
 
 ## Dependencies

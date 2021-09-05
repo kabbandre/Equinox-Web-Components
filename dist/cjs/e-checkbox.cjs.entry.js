@@ -9,18 +9,18 @@ const eCheckboxCss = ":host{display:block}.container{display:block;position:rela
 const ECheckbox = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
-        this.input = index.createEvent(this, "input", 7);
+        this.valueChanged = index.createEvent(this, "valueChanged", 7);
         this.classes = () => ({
             indeterminate: this.indeterminate,
             container: true
         });
     }
-    inputHandler(ev) {
+    valueChangedHandler(ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.input.emit(this.value);
+        this.valueChanged.emit(this.value);
     }
     render() {
-        return (index.h("label", { class: this.classes() }, index.h("slot", null), index.h("input", { onInput: (ev) => this.inputHandler(ev), type: "checkbox" }), index.h("span", { class: "checkmark" })));
+        return (index.h("label", { class: this.classes() }, index.h("slot", null), index.h("input", { onInput: (ev) => this.valueChangedHandler(ev), type: "checkbox" }), index.h("span", { class: "checkmark" })));
     }
 };
 ECheckbox.style = eCheckboxCss;

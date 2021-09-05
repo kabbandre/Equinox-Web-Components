@@ -6,12 +6,12 @@ import {Component, Event, EventEmitter, h, Prop} from '@stencil/core';
   shadow: true,
 })
 export class ERadio {
-  @Prop() name: string
+  @Prop({ mutable: true }) name: string
   @Prop({ mutable: true }) value: any
-  @Event() input: EventEmitter
-  inputHandler(ev) {
+  @Event() valueChanged: EventEmitter
+  valueChangedHandler(ev) {
     this.value = ev.target ? ev.target.value : null
-    this.input.emit(this.value)
+    this.valueChanged.emit(this.value)
   }
 
   render() {
@@ -20,7 +20,7 @@ export class ERadio {
         <slot>
           Eclipse
         </slot>
-        <input name={this.name} onInput={(ev) => this.inputHandler(ev)} type="checkbox" />
+        <input name={this.name} onInput={(ev) => this.valueChangedHandler(ev)} type="checkbox" />
         <span class="checkmark"/>
       </label>
     );

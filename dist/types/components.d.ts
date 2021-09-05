@@ -372,7 +372,7 @@ declare namespace LocalJSX {
     }
     interface ECheckbox {
         "indeterminate"?: boolean;
-        "onInput"?: (event: CustomEvent<boolean>) => void;
+        "onValueChanged"?: (event: CustomEvent<boolean>) => void;
         "value"?: boolean;
     }
     interface EChip {
@@ -415,7 +415,7 @@ declare namespace LocalJSX {
     interface EInput {
         "appendIcon"?: string;
         "ghost"?: boolean;
-        "onInput"?: (event: CustomEvent<string | number>) => void;
+        "onValueChanged"?: (event: CustomEvent<string | number>) => void;
         "outlined"?: boolean;
         "placeholder"?: string;
         "prependIcon"?: string;
@@ -436,7 +436,7 @@ declare namespace LocalJSX {
     }
     interface ERadio {
         "name"?: string;
-        "onInput"?: (event: CustomEvent<any>) => void;
+        "onValueChanged"?: (event: CustomEvent<any>) => void;
         "value"?: any;
     }
     interface EScroll {

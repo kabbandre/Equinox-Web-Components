@@ -2,7 +2,7 @@ import { EventEmitter } from '../../stencil-public-runtime';
 export declare class ERadio {
     name: string;
     value: any;
-    input: EventEmitter;
-    inputHandler(ev: any): void;
+    valueChanged: EventEmitter;
+    valueChangedHandler(ev: any): void;
     render(): any;
 }

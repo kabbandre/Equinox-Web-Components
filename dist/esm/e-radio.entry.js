@@ -5,14 +5,14 @@ const eRadioCss = ":host{display:block}.container{display:block;position:relativ
 const ERadio = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.input = createEvent(this, "input", 7);
+        this.valueChanged = createEvent(this, "valueChanged", 7);
     }
-    inputHandler(ev) {
+    valueChangedHandler(ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.input.emit(this.value);
+        this.valueChanged.emit(this.value);
     }
     render() {
-        return (h("label", { class: "container" }, h("slot", null, "Eclipse"), h("input", { name: this.name, onInput: (ev) => this.inputHandler(ev), type: "checkbox" }), h("span", { class: "checkmark" })));
+        return (h("label", { class: "container" }, h("slot", null, "Eclipse"), h("input", { name: this.name, onInput: (ev) => this.valueChangedHandler(ev), type: "checkbox" }), h("span", { class: "checkmark" })));
     }
 };
 ERadio.style = eRadioCss;

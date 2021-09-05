@@ -6,14 +6,14 @@ export class ECheckbox {
             container: true
         });
     }
-    inputHandler(ev) {
+    valueChangedHandler(ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.input.emit(this.value);
+        this.valueChanged.emit(this.value);
     }
     render() {
         return (h("label", { class: this.classes() },
             h("slot", null),
-            h("input", { onInput: (ev) => this.inputHandler(ev), type: "checkbox" }),
+            h("input", { onInput: (ev) => this.valueChangedHandler(ev), type: "checkbox" }),
             h("span", { class: "checkmark" })));
     }
     static get is() { return "e-checkbox"; }
@@ -61,8 +61,8 @@ export class ECheckbox {
         }
     }; }
     static get events() { return [{
-            "method": "input",
-            "name": "input",
+            "method": "valueChanged",
+            "name": "valueChanged",
             "bubbles": true,
             "cancelable": true,
             "composed": true,

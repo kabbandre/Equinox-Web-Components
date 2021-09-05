@@ -4,19 +4,19 @@ var ECheckbox = /** @class */ (function () {
     function ECheckbox(hostRef) {
         var _this = this;
         registerInstance(this, hostRef);
-        this.input = createEvent(this, "input", 7);
+        this.valueChanged = createEvent(this, "valueChanged", 7);
         this.classes = function () { return ({
             indeterminate: _this.indeterminate,
             container: true
         }); };
     }
-    ECheckbox.prototype.inputHandler = function (ev) {
+    ECheckbox.prototype.valueChangedHandler = function (ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.input.emit(this.value);
+        this.valueChanged.emit(this.value);
     };
     ECheckbox.prototype.render = function () {
         var _this = this;
-        return (h("label", { class: this.classes() }, h("slot", null), h("input", { onInput: function (ev) { return _this.inputHandler(ev); }, type: "checkbox" }), h("span", { class: "checkmark" })));
+        return (h("label", { class: this.classes() }, h("slot", null), h("input", { onInput: function (ev) { return _this.valueChangedHandler(ev); }, type: "checkbox" }), h("span", { class: "checkmark" })));
     };
     return ECheckbox;
 }());

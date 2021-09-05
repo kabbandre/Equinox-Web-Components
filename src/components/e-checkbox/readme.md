@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event   | Description | Type                   |
-| ------- | ----------- | ---------------------- |
-| `input` |             | `CustomEvent<boolean>` |
+| Event          | Description | Type                   |
+| -------------- | ----------- | ---------------------- |
+| `valueChanged` |             | `CustomEvent<boolean>` |
 
 
 ----------------------------------------------
