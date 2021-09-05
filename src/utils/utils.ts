@@ -14,3 +14,12 @@ export const getAbbr = (str): string => {
     return ""
   }
 }
+
+export const deserializeJSON = (json, component = 'unknown'): any => {
+  try {
+    json = json.split("&quot;").join("\"")
+    return JSON.parse(json)
+  } catch (e) {
+    alert(`Error while trying to parse JSON in ${component} component`)
+  }
+}

@@ -10,12 +10,10 @@ import {getAbbr} from "../../utils/utils";
 export class EAvatar {
   @Prop() size: AvatarSizes = "md"
   @Prop() color: string = "#CBD5E0"
-  @Prop() outlined: boolean
   @Prop() text?: string
 
   private classes = () => ({
     'e-avatar': true,
-    outlined: this.outlined,
     [this.size]: true
   })
 

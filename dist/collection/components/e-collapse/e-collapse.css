@@ -1,3 +1,1 @@
-:host {
-  display: block;
-}
+:host{display:block}.e-collapse-header{display:flex;align-items:center;justify-content:space-between;font-size:16px;line-height:150%}.e-collapse__text{font-size:12px;line-height:150%;color:var(--gray-600)}

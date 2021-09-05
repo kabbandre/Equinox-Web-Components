@@ -22,31 +22,7 @@ export class ECard {
     render() {
         return (h(Host, null,
             h("div", { class: this.classes() },
-                h("slot", null,
-                    h("div", { style: {
-                            padding: '16px',
-                            width: '180px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center'
-                        } },
-                        h("e-avatar", { text: "MJ", size: "xxl" }),
-                        h("div", { style: {
-                                display: 'flex',
-                                marginTop: '17px',
-                                marginBottom: '9px',
-                                color: 'white'
-                            } },
-                            h("e-icon", { style: {
-                                    marginRight: '12px'
-                                }, icon: "ph-eye" }),
-                            "0"),
-                        h("div", { style: {
-                                color: 'var(--gray-400)'
-                            } }, "Yesterday"),
-                        h("div", { style: {
-                                color: 'var(--gray-400)'
-                            } }, "1:42 PM"))))));
+                h("slot", null))));
     }
     static get is() { return "e-card"; }
     static get encapsulation() { return "shadow"; }

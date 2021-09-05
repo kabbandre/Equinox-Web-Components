@@ -11,7 +11,7 @@
 | ------------- | -------------- | ------------------------------------------------------------------- | ----------------------------------------------- | ----------- |
 | `appendIcon`  | `append-icon`  | Append icon                                                         | `string`                                        | `""`        |
 | `disabled`    | `disabled`     | Disable button                                                      | `boolean`                                       | `undefined` |
-| `icon`        | `icon`         | Turn button into the icon button. Pass icon code to this attribute. | `string`                                        | `"ph-plus"` |
+| `icon`        | `icon`         | Turn button into the icon button. Pass icon code to this attribute. | `string`                                        | `undefined` |
 | `prependIcon` | `prepend-icon` | Prepend icon                                                        | `string`                                        | `""`        |
 | `rounded`     | `rounded`      | Make button edges rounded                                           | `boolean`                                       | `undefined` |
 | `size`        | `size`         | Button size                                                         | `"lg" \| "md" \| "sm" \| "xl" \| "xll" \| "xs"` | `"xs"`      |

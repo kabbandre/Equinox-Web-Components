@@ -9,6 +9,7 @@ declare const _default: {
             padding: string;
             borderRadius: string;
         };
+        content: string;
     }[];
 };
 export default _default;

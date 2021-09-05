@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+}
+
+.input-wrapper
+  transition all 0.3s ease
+  display flex
+  align-items center
+  gap 12px
+  padding: 0 22px
+  background var(--gray-100)
+  input
+    color var(--gray-500)
+  &.outlined
+    background none
+    box-shadow 0 0 0 1px var(--gray-300)
+  &.ghost
+    background: none
+  &:hover
+    box-shadow 0 0 0 1px var(--gray-400)
+  &:focus-within
+    box-shadow 0 0 0 1px var(--primary)
+    input
+      color var(--primary)
+  border-radius: 3px;
+  &.rounded
+    border-radius 100px
+  &.xs
+    height: 26px
+  &.sm
+    height 32px
+  &.md
+    height: 38px
+  &.lg
+    height: 42px
+  &.xl
+    height: 46px
+  &.xxl
+    height: 56px
+  input
+    background transparent
+    outline none
+    border none

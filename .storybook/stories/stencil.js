@@ -221,6 +221,10 @@ function createStencilStory({ Component, notes, states, knobs}, stories) {
             placeholder.style[prop] = val
           })
         }
+				if (content) {
+				  console.log(componentEl.innerHTML)
+          componentEl.innerHTML = content
+        }
 				mainEl.appendChild(containerEl);
 			});
 

@@ -1,4 +1,4 @@
-@import '../../assets/phosphor/css/phosphor.css';
+@import './assets/css/phosphor.css';
 
 :host {
   width: fit-content;

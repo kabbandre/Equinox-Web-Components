@@ -8,7 +8,7 @@ export class ECheckbox {
     }
     render() {
         return (h("label", { class: this.classes() },
-            h("slot", null, "Eclipse"),
+            h("slot", null),
             h("input", { type: "checkbox" }),
             h("span", { class: "checkmark" })));
     }

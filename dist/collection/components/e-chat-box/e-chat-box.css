@@ -134,6 +134,25 @@ html {
   backdrop-filter: blur(33px);
 }
 
+.e-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.e-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.e-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.e-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* Elevations */
 .elevation-1 {
   box-shadow: 0px 2px 1px -1px rgba(160, 174, 192, 0.2), 0px 1px 1px rgba(160, 174, 192, 0.14), 0px 1px 3px rgba(160, 174, 192, 0.12);

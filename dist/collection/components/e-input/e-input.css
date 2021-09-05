@@ -1,3 +1,1 @@
-:host {
-  display: block;
-}
+:host{display:flex}.input-wrapper{transition:all .3s ease;display:flex;align-items:center;gap:12px;padding:0 22px;background:var(--gray-100);border-radius:3px}.input-wrapper input{color:var(--gray-500)}.input-wrapper.outlined{background:none;box-shadow:0 0 0 1px var(--gray-300)}.input-wrapper.ghost{background:none}.input-wrapper:hover{box-shadow:0 0 0 1px var(--gray-400)}.input-wrapper:focus-within{box-shadow:0 0 0 1px var(--primary)}.input-wrapper:focus-within input{color:var(--primary)}.input-wrapper.rounded{border-radius:100px}.input-wrapper.xs{height:26px}.input-wrapper.sm{height:32px}.input-wrapper.md{height:38px}.input-wrapper.lg{height:42px}.input-wrapper.xl{height:46px}.input-wrapper.xxl{height:56px}.input-wrapper input{background:transparent;outline:none;border:none}

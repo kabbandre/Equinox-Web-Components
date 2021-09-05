@@ -6,7 +6,6 @@ export class EAvatar {
         this.color = "#CBD5E0";
         this.classes = () => ({
             'e-avatar': true,
-            outlined: this.outlined,
             [this.size]: true
         });
         this.styles = () => ({
@@ -67,23 +66,6 @@ export class EAvatar {
             "attribute": "color",
             "reflect": false,
             "defaultValue": "\"#CBD5E0\""
-        },
-        "outlined": {
-            "type": "boolean",
-            "mutable": false,
-            "complexType": {
-                "original": "boolean",
-                "resolved": "boolean",
-                "references": {}
-            },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "outlined",
-            "reflect": false
         },
         "text": {
             "type": "string",

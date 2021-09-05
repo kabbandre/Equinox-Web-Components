@@ -9,7 +9,7 @@ export class EIcon {
   /**
    * Icon from Phosphor Icons library
    */
-  @Prop() icon: string = "ph-smiley"
+  @Prop() icon: string
   /**
    * Color of the icon
    */

@@ -17,7 +17,7 @@ export class EBtn {
   /**
    * Turn button into the icon button. Pass icon code to this attribute.
    */
-  @Prop() icon?: string = "ph-plus"
+  @Prop() icon?: string
   /**
    * Button size
    */
@@ -50,9 +50,7 @@ export class EBtn {
         <slot name="prepend-icon">
           {this.renderIcon(this.prependIcon)}
         </slot>,
-        <slot>
-          Eclipse
-        </slot>,
+        <slot/>,
         <slot name="append-icon">
           {this.renderIcon(this.appendIcon)}
         </slot>

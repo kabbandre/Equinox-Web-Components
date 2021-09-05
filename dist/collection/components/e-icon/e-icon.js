@@ -2,10 +2,6 @@ import { Component, h, Prop } from '@stencil/core';
 export class EIcon {
     constructor() {
         /**
-         * Icon from Phosphor Icons library
-         */
-        this.icon = "ph-smiley";
-        /**
          * Size of the icon
          */
         this.size = "inherit";
@@ -38,8 +34,7 @@ export class EIcon {
                 "text": "Icon from Phosphor Icons library"
             },
             "attribute": "icon",
-            "reflect": false,
-            "defaultValue": "\"ph-smiley\""
+            "reflect": false
         },
         "color": {
             "type": "string",

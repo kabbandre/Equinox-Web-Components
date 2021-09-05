@@ -2,10 +2,6 @@ import { Component, h, Prop } from '@stencil/core';
 export class EBtn {
     constructor() {
         /**
-         * Turn button into the icon button. Pass icon code to this attribute.
-         */
-        this.icon = "ph-plus";
-        /**
          * Button size
          */
         this.size = "xs";
@@ -31,7 +27,7 @@ export class EBtn {
             else {
                 return [
                     h("slot", { name: "prepend-icon" }, this.renderIcon(this.prependIcon)),
-                    h("slot", null, "Eclipse"),
+                    h("slot", null),
                     h("slot", { name: "append-icon" }, this.renderIcon(this.appendIcon))
                 ];
             }
@@ -98,8 +94,7 @@ export class EBtn {
                 "text": "Turn button into the icon button. Pass icon code to this attribute."
             },
             "attribute": "icon",
-            "reflect": false,
-            "defaultValue": "\"ph-plus\""
+            "reflect": false
         },
         "size": {
             "type": "string",

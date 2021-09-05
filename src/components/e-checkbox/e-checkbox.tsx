@@ -16,9 +16,7 @@ export class ECheckbox {
   render() {
     return (
       <label class={this.classes()}>
-        <slot>
-          Eclipse
-        </slot>
+        <slot />
         <input type="checkbox" />
         <span class="checkmark"/>
       </label>

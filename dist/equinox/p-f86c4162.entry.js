@@ -1,1 +1,0 @@
-import{r as s,h as t,H as r}from"./p-a35f7b5b.js";const o=class{constructor(t){s(this,t)}render(){return t(r,null,t("slot",null))}};o.style=":host{display:block}";export{o as e_entity}
