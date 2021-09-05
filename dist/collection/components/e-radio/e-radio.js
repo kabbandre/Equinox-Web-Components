@@ -5,34 +5,7 @@ export class ERadio {
     }
     valueChangedHandler() {
         this.checked = true;
-        this.valueChanged.emit({
-            AT_TARGET: 0,
-            BUBBLING_PHASE: 0,
-            CAPTURING_PHASE: 0,
-            NONE: 0,
-            bubbles: false,
-            cancelBubble: false,
-            cancelable: false,
-            composed: false,
-            composedPath() {
-                return [];
-            },
-            currentTarget: undefined,
-            defaultPrevented: false,
-            eventPhase: 0,
-            initCustomEvent() { },
-            initEvent() { },
-            isTrusted: false,
-            returnValue: false,
-            srcElement: undefined,
-            target: undefined,
-            timeStamp: 0,
-            type: "",
-            preventDefault() { },
-            stopImmediatePropagation() { },
-            stopPropagation() { },
-            detail: this.value
-        });
+        this.valueChanged.emit(this.value);
     }
     render() {
         return (h("label", { class: "container" },
@@ -96,13 +69,9 @@ export class ERadio {
                 "text": ""
             },
             "complexType": {
-                "original": "CustomEvent",
-                "resolved": "CustomEvent<any>",
-                "references": {
-                    "CustomEvent": {
-                        "location": "global"
-                    }
-                }
+                "original": "string",
+                "resolved": "string",
+                "references": {}
             }
         }]; }
 }

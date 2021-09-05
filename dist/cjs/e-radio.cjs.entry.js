@@ -14,34 +14,7 @@ const ERadio = class {
     }
     valueChangedHandler() {
         this.checked = true;
-        this.valueChanged.emit({
-            AT_TARGET: 0,
-            BUBBLING_PHASE: 0,
-            CAPTURING_PHASE: 0,
-            NONE: 0,
-            bubbles: false,
-            cancelBubble: false,
-            cancelable: false,
-            composed: false,
-            composedPath() {
-                return [];
-            },
-            currentTarget: undefined,
-            defaultPrevented: false,
-            eventPhase: 0,
-            initCustomEvent() { },
-            initEvent() { },
-            isTrusted: false,
-            returnValue: false,
-            srcElement: undefined,
-            target: undefined,
-            timeStamp: 0,
-            type: "",
-            preventDefault() { },
-            stopImmediatePropagation() { },
-            stopPropagation() { },
-            detail: this.value
-        });
+        this.valueChanged.emit(this.value);
     }
     render() {
         return (index.h("label", { class: "container" }, index.h("slot", null, "Eclipse"), index.h("input", { checked: this.checked, onClick: this.valueChangedHandler.bind(this), type: "checkbox" }), index.h("span", { class: "checkmark" })));

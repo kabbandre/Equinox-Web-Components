@@ -446,7 +446,7 @@ declare namespace LocalJSX {
     }
     interface ERadio {
         "checked"?: boolean;
-        "onValueChanged"?: (event: CustomEvent<CustomEvent>) => void;
+        "onValueChanged"?: (event: CustomEvent<string>) => void;
         "value": string;
     }
     interface ERadioGroup {

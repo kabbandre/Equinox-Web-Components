@@ -8,34 +8,7 @@ var ERadio = /** @class */ (function () {
     }
     ERadio.prototype.valueChangedHandler = function () {
         this.checked = true;
-        this.valueChanged.emit({
-            AT_TARGET: 0,
-            BUBBLING_PHASE: 0,
-            CAPTURING_PHASE: 0,
-            NONE: 0,
-            bubbles: false,
-            cancelBubble: false,
-            cancelable: false,
-            composed: false,
-            composedPath: function () {
-                return [];
-            },
-            currentTarget: undefined,
-            defaultPrevented: false,
-            eventPhase: 0,
-            initCustomEvent: function () { },
-            initEvent: function () { },
-            isTrusted: false,
-            returnValue: false,
-            srcElement: undefined,
-            target: undefined,
-            timeStamp: 0,
-            type: "",
-            preventDefault: function () { },
-            stopImmediatePropagation: function () { },
-            stopPropagation: function () { },
-            detail: this.value
-        });
+        this.valueChanged.emit(this.value);
     };
     ERadio.prototype.render = function () {
         return (h("label", { class: "container" }, h("slot", null, "Eclipse"), h("input", { checked: this.checked, onClick: this.valueChangedHandler.bind(this), type: "checkbox" }), h("span", { class: "checkmark" })));
