@@ -1,0 +1,1 @@
+import{r as s,h as l,H as r}from"./p-f293e636.js";const o=class{constructor(l){s(this,l)}render(){return l(r,null,l("div",{style:{maxHeight:"200px",overflow:"auto"},class:"e-scroll"},l("slot",null)))}};export{o as e_scroll}

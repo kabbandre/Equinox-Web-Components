@@ -1,0 +1,1 @@
+import{r as s,h as r,H as t}from"./p-f293e636.js";const e=class{constructor(r){s(this,r)}render(){return r(t,null,r("slot",null))}};e.style=":host{display:block}";export{e as e_fieldtree}

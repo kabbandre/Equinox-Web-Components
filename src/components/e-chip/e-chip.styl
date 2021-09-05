@@ -1,0 +1,30 @@
+:host
+  display: block
+
+button
+  display flex
+  align-items center
+  justify-content center
+  gap 10px
+  transition 0.3s ease
+
+  line-height 150%
+
+  background var(--gray-200)
+  color var(--primary)
+  &.text, &.outlined, &.disabled, &.shadow
+    background none
+  &.outlined
+    border 1px solid var(--primary)
+  &.disabled
+    color var(--gray-300) !important
+  &.shadow
+    box-shadow: 0 0 7px rgba(231, 204, 180, 0.22);
+    border: 1px solid linear-gradient(90deg, #E7CCB4 0%, rgba(255, 255, 255, 0) 100%);
+    border-image-source: linear-gradient(0deg, #F2F2F2, #F2F2F2),
+    linear-gradient(90deg, #E7CCB4 0%, rgba(255, 255, 255, 0) 100%);
+  padding 4px 8px
+  border-radius 4px
+  &.rounded
+    border-radius 100px
+  border none
