@@ -4,7 +4,7 @@ var ECheckbox = /** @class */ (function () {
     function ECheckbox(hostRef) {
         var _this = this;
         registerInstance(this, hostRef);
-        this.valueChanged = createEvent(this, "checkedChanged", 7);
+        this.valueChanged = createEvent(this, "valueChanged", 7);
         this.value = false;
         this.classes = function () { return ({
             indeterminate: _this.indeterminate,

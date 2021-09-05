@@ -8,7 +8,7 @@ import {Component, Event, EventEmitter, h, Prop} from '@stencil/core';
 export class ECheckbox {
   checkboxInput: HTMLInputElement;
   @Prop({ mutable: true, reflect: true }) value: boolean = false;
-  @Event({ eventName: "checkedChanged", composed: true }) valueChanged: EventEmitter;
+  @Event({ composed: true }) valueChanged: EventEmitter;
   valueChangedHandler(checked: boolean) {
     this.valueChanged.emit(checked);
   }

@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event            | Description | Type               |
-| ---------------- | ----------- | ------------------ |
-| `checkedChanged` |             | `CustomEvent<any>` |
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `valueChanged` |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------

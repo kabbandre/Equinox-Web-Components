@@ -5,7 +5,7 @@ const eCheckboxCss = ":host{display:block}.container{display:block;position:rela
 const ECheckbox = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.valueChanged = createEvent(this, "checkedChanged", 7);
+        this.valueChanged = createEvent(this, "valueChanged", 7);
         this.value = false;
         this.classes = () => ({
             indeterminate: this.indeterminate,

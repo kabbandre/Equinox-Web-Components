@@ -63,7 +63,7 @@ export class ECheckbox {
     }; }
     static get events() { return [{
             "method": "valueChanged",
-            "name": "checkedChanged",
+            "name": "valueChanged",
             "bubbles": true,
             "cancelable": true,
             "composed": true,
