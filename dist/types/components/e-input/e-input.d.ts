@@ -10,8 +10,8 @@ export declare class EInput {
     placeholder: string;
     type: string;
     value: string | number;
-    valueChanged: EventEmitter<string | number>;
-    valueChangedHandler(ev: any): void;
+    input: EventEmitter<string | number>;
+    inputHandler(ev: any): void;
     private classes;
     private renderIcon;
     render(): any;

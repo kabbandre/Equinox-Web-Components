@@ -3,6 +3,7 @@ declare const _default: {
     states: {
         title: string;
         props: {};
+        content: string;
     }[];
 };
 export default _default;

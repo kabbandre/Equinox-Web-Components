@@ -4,7 +4,7 @@ var EInput = /** @class */ (function () {
     function EInput(hostRef) {
         var _this = this;
         registerInstance(this, hostRef);
-        this.valueChanged = createEvent(this, "valueChanged", 7);
+        this.input = createEvent(this, "input", 7);
         this.size = "md";
         this.type = "text";
         this.classes = function () {
@@ -20,13 +20,13 @@ var EInput = /** @class */ (function () {
         };
         this.renderIcon = function (icon) { return (icon && h("e-icon", { size: "18px", icon: icon })); };
     }
-    EInput.prototype.valueChangedHandler = function (ev) {
+    EInput.prototype.inputHandler = function (ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.valueChanged.emit(this.value);
+        this.input.emit(this.value);
     };
     EInput.prototype.render = function () {
         var _this = this;
-        return (h(Host, null, h("div", { class: this.classes() }, h("slot", { name: "prepend-icon" }, this.renderIcon(this.prependIcon)), h("input", { placeholder: this.placeholder, value: this.value, onInput: function (ev) { return _this.valueChangedHandler(ev); } }), h("slot", { name: "append-icon" }, this.renderIcon(this.appendIcon)))));
+        return (h(Host, null, h("div", { class: this.classes() }, h("slot", { name: "prepend-icon" }, this.renderIcon(this.prependIcon)), h("input", { placeholder: this.placeholder, value: this.value, onInput: function (ev) { return _this.inputHandler(ev); } }), h("slot", { name: "append-icon" }, this.renderIcon(this.appendIcon)))));
     };
     return EInput;
 }());

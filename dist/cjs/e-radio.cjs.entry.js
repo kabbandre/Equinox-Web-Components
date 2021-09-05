@@ -9,9 +9,14 @@ const eRadioCss = ":host{display:block}.container{display:block;position:relativ
 const ERadio = class {
     constructor(hostRef) {
         index.registerInstance(this, hostRef);
+        this.input = index.createEvent(this, "input", 7);
+    }
+    inputHandler(ev) {
+        this.value = ev.target ? ev.target.value : null;
+        this.input.emit(this.value);
     }
     render() {
-        return (index.h("label", { class: "container" }, index.h("slot", null, "Eclipse"), index.h("input", { type: "checkbox" }), index.h("span", { class: "checkmark" })));
+        return (index.h("label", { class: "container" }, index.h("slot", null, "Eclipse"), index.h("input", { name: this.name, onInput: (ev) => this.inputHandler(ev), type: "checkbox" }), index.h("span", { class: "checkmark" })));
     }
 };
 ERadio.style = eRadioCss;

@@ -57,6 +57,7 @@ export namespace Components {
     }
     interface ECheckbox {
         "indeterminate": boolean;
+        "value": boolean;
     }
     interface EChip {
         "color": string;
@@ -117,6 +118,8 @@ export namespace Components {
         "width": string;
     }
     interface ERadio {
+        "name": string;
+        "value": any;
     }
     interface EScroll {
     }
@@ -369,6 +372,8 @@ declare namespace LocalJSX {
     }
     interface ECheckbox {
         "indeterminate"?: boolean;
+        "onInput"?: (event: CustomEvent<boolean>) => void;
+        "value"?: boolean;
     }
     interface EChip {
         "color"?: string;
@@ -410,7 +415,7 @@ declare namespace LocalJSX {
     interface EInput {
         "appendIcon"?: string;
         "ghost"?: boolean;
-        "onValueChanged"?: (event: CustomEvent<string | number>) => void;
+        "onInput"?: (event: CustomEvent<string | number>) => void;
         "outlined"?: boolean;
         "placeholder"?: string;
         "prependIcon"?: string;
@@ -430,6 +435,9 @@ declare namespace LocalJSX {
         "width"?: string;
     }
     interface ERadio {
+        "name"?: string;
+        "onInput"?: (event: CustomEvent<any>) => void;
+        "value"?: any;
     }
     interface EScroll {
     }

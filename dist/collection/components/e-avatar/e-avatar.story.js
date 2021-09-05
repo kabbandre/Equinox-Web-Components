@@ -5,6 +5,7 @@ export default {
         {
             title: 'Avatar',
             props: {},
+            content: '<img src="https://picsum.photos/200">'
         }
     ]
 };

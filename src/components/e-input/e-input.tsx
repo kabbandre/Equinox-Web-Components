@@ -18,10 +18,10 @@ export class EInput {
   @Prop() placeholder: string
   @Prop() type: string = "text"
   @Prop({ mutable: true }) value: string | number
-  @Event() valueChanged: EventEmitter<string | number>
-  valueChangedHandler(ev) {
+  @Event() input: EventEmitter<string | number>
+  inputHandler(ev) {
     this.value = ev.target ? ev.target.value : null
-    this.valueChanged.emit(this.value)
+    this.input.emit(this.value)
   }
 
   private classes = () => ({
@@ -41,7 +41,7 @@ export class EInput {
           <slot name="prepend-icon">
             {this.renderIcon(this.prependIcon)}
           </slot>
-          <input placeholder={this.placeholder} value={this.value} onInput={(ev) => this.valueChangedHandler(ev)}/>
+          <input placeholder={this.placeholder} value={this.value} onInput={(ev) => this.inputHandler(ev)}/>
           <slot name="append-icon">
             {this.renderIcon(this.appendIcon)}
           </slot>

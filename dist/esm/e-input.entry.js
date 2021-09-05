@@ -5,7 +5,7 @@ const eInputCss = ":host{display:-ms-flexbox;display:flex}.input-wrapper{-webkit
 const EInput = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
-        this.valueChanged = createEvent(this, "valueChanged", 7);
+        this.input = createEvent(this, "input", 7);
         this.size = "md";
         this.type = "text";
         this.classes = () => ({
@@ -17,12 +17,12 @@ const EInput = class {
         });
         this.renderIcon = (icon) => (icon && h("e-icon", { size: "18px", icon: icon }));
     }
-    valueChangedHandler(ev) {
+    inputHandler(ev) {
         this.value = ev.target ? ev.target.value : null;
-        this.valueChanged.emit(this.value);
+        this.input.emit(this.value);
     }
     render() {
-        return (h(Host, null, h("div", { class: this.classes() }, h("slot", { name: "prepend-icon" }, this.renderIcon(this.prependIcon)), h("input", { placeholder: this.placeholder, value: this.value, onInput: (ev) => this.valueChangedHandler(ev) }), h("slot", { name: "append-icon" }, this.renderIcon(this.appendIcon)))));
+        return (h(Host, null, h("div", { class: this.classes() }, h("slot", { name: "prepend-icon" }, this.renderIcon(this.prependIcon)), h("input", { placeholder: this.placeholder, value: this.value, onInput: (ev) => this.inputHandler(ev) }), h("slot", { name: "append-icon" }, this.renderIcon(this.appendIcon)))));
     }
 };
 EInput.style = eInputCss;

@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, h, Prop } from '@stencil/core';
 export class ECheckbox {
     constructor() {
         this.classes = () => ({
@@ -6,10 +6,14 @@ export class ECheckbox {
             container: true
         });
     }
+    inputHandler(ev) {
+        this.value = ev.target ? ev.target.value : null;
+        this.input.emit(this.value);
+    }
     render() {
         return (h("label", { class: this.classes() },
             h("slot", null),
-            h("input", { type: "checkbox" }),
+            h("input", { onInput: (ev) => this.inputHandler(ev), type: "checkbox" }),
             h("span", { class: "checkmark" })));
     }
     static get is() { return "e-checkbox"; }
@@ -37,6 +41,39 @@ export class ECheckbox {
             },
             "attribute": "indeterminate",
             "reflect": false
+        },
+        "value": {
+            "type": "boolean",
+            "mutable": true,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "value",
+            "reflect": false
         }
     }; }
+    static get events() { return [{
+            "method": "input",
+            "name": "input",
+            "bubbles": true,
+            "cancelable": true,
+            "composed": true,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            }
+        }]; }
 }

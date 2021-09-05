@@ -1,4 +1,4 @@
-import {Component, h, Prop} from '@stencil/core';
+import {Component, Event, EventEmitter, h, Prop} from '@stencil/core';
 
 @Component({
   tag: 'e-checkbox',
@@ -7,6 +7,13 @@ import {Component, h, Prop} from '@stencil/core';
 })
 export class ECheckbox {
   @Prop() indeterminate: boolean
+
+  @Prop({ mutable: true }) value: boolean
+  @Event() input: EventEmitter<boolean>
+  inputHandler(ev) {
+    this.value = ev.target ? ev.target.value : null
+    this.input.emit(this.value)
+  }
 
   private classes = () => ({
     indeterminate: this.indeterminate,
@@ -17,7 +24,7 @@ export class ECheckbox {
     return (
       <label class={this.classes()}>
         <slot />
-        <input type="checkbox" />
+        <input onInput={(ev) => this.inputHandler(ev)} type="checkbox" />
         <span class="checkmark"/>
       </label>
     );
