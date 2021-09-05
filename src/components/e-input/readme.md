@@ -16,7 +16,15 @@
 | `prependIcon` | `prepend-icon` |             | `string`                                        | `undefined` |
 | `rounded`     | `rounded`      |             | `boolean`                                       | `undefined` |
 | `size`        | `size`         |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs" \| "xxl"` | `"md"`      |
-| `value`       | `value`        |             | `string`                                        | `undefined` |
+| `type`        | `type`         |             | `string`                                        | `"text"`    |
+| `value`       | `value`        |             | `number \| string`                              | `undefined` |
+
+
+## Events
+
+| Event          | Description | Type                            |
+| -------------- | ----------- | ------------------------------- |
+| `valueChanged` |             | `CustomEvent<number \| string>` |
 
 
 ## Dependencies

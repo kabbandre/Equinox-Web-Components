@@ -1,3 +1,4 @@
+import { EventEmitter } from '../../stencil-public-runtime';
 import { InputSizes } from "../../types";
 export declare class EInput {
     outlined: boolean;
@@ -7,7 +8,10 @@ export declare class EInput {
     prependIcon: string;
     appendIcon: string;
     placeholder: string;
-    value: string;
+    type: string;
+    value: string | number;
+    valueChanged: EventEmitter<string | number>;
+    valueChangedHandler(ev: any): void;
     private classes;
     private renderIcon;
     render(): any;

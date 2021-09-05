@@ -103,7 +103,8 @@ export namespace Components {
         "prependIcon": string;
         "rounded": boolean;
         "size": InputSizes;
-        "value": string;
+        "type": string;
+        "value": string | number;
     }
     interface EMenu {
     }
@@ -409,12 +410,14 @@ declare namespace LocalJSX {
     interface EInput {
         "appendIcon"?: string;
         "ghost"?: boolean;
+        "onValueChanged"?: (event: CustomEvent<string | number>) => void;
         "outlined"?: boolean;
         "placeholder"?: string;
         "prependIcon"?: string;
         "rounded"?: boolean;
         "size"?: InputSizes;
-        "value"?: string;
+        "type"?: string;
+        "value"?: string | number;
     }
     interface EMenu {
     }

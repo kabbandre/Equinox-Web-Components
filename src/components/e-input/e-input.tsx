@@ -1,4 +1,4 @@
-import {Component, Host, h, Prop} from '@stencil/core';
+import {Component, Host, h, Prop, EventEmitter, Event} from '@stencil/core';
 import {InputSizes} from "../../types";
 
 @Component({
@@ -16,7 +16,13 @@ export class EInput {
   @Prop() appendIcon: string
 
   @Prop() placeholder: string
-  @Prop() value: string
+  @Prop() type: string = "text"
+  @Prop({ mutable: true }) value: string | number
+  @Event() valueChanged: EventEmitter<string | number>
+  valueChangedHandler(ev) {
+    this.value = ev.target ? ev.target.value : null
+    this.valueChanged.emit(this.value)
+  }
 
   private classes = () => ({
     outlined: this.outlined,
@@ -35,7 +41,7 @@ export class EInput {
           <slot name="prepend-icon">
             {this.renderIcon(this.prependIcon)}
           </slot>
-          <input placeholder={this.placeholder} value={this.value} />
+          <input placeholder={this.placeholder} value={this.value} onInput={(ev) => this.valueChangedHandler(ev)}/>
           <slot name="append-icon">
             {this.renderIcon(this.appendIcon)}
           </slot>
