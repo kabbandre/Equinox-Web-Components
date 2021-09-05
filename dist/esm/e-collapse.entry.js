@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-5e231675.js';
+import { r as registerInstance, h } from './index-ba575c47.js';
 
 const eCollapseCss = ":host{display:block}.e-collapse-header{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;font-size:16px;line-height:150%}.e-collapse__text{font-size:12px;line-height:150%;color:var(--gray-600)}";
 

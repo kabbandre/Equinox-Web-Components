@@ -7,17 +7,17 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `name`   | `name`    |             | `string` | `undefined` |
-| `value`  | `value`   |             | `any`    | `undefined` |
+| Property             | Attribute | Description | Type      | Default     |
+| -------------------- | --------- | ----------- | --------- | ----------- |
+| `checked`            | `checked` |             | `boolean` | `false`     |
+| `value` _(required)_ | `value`   |             | `string`  | `undefined` |
 
 
 ## Events
 
-| Event          | Description | Type               |
-| -------------- | ----------- | ------------------ |
-| `valueChanged` |             | `CustomEvent<any>` |
+| Event          | Description | Type                |
+| -------------- | ----------- | ------------------- |
+| `valueChanged` |             | `CustomEvent<void>` |
 
 
 ----------------------------------------------

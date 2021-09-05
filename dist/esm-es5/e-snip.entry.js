@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './index-5e231675.js';
+import { r as registerInstance, h, H as Host } from './index-ba575c47.js';
 var eSnipCss = ":host{display:block}";
 var ESnip = /** @class */ (function () {
     function ESnip(hostRef) {

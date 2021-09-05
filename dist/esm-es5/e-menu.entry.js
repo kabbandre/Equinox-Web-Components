@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './index-5e231675.js';
+import { r as registerInstance, h, H as Host } from './index-ba575c47.js';
 var eMenuCss = ":host{display:block}";
 var EMenu = /** @class */ (function () {
     function EMenu(hostRef) {

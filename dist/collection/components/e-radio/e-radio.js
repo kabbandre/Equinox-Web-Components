@@ -1,13 +1,16 @@
 import { Component, Event, h, Prop } from '@stencil/core';
 export class ERadio {
-    valueChangedHandler(ev) {
-        this.value = ev.target ? ev.target.value : null;
-        this.valueChanged.emit(this.value);
+    constructor() {
+        this.checked = false;
+    }
+    valueChangedHandler() {
+        this.checked = true;
+        this.valueChanged.emit();
     }
     render() {
         return (h("label", { class: "container" },
             h("slot", null, "Eclipse"),
-            h("input", { name: this.name, onInput: (ev) => this.valueChangedHandler(ev), type: "checkbox" }),
+            h("input", { checked: this.checked, onClick: this.valueChangedHandler.bind(this), type: "checkbox" }),
             h("span", { class: "checkmark" })));
     }
     static get is() { return "e-radio"; }
@@ -19,32 +22,15 @@ export class ERadio {
         "$": ["e-radio.css"]
     }; }
     static get properties() { return {
-        "name": {
+        "value": {
             "type": "string",
-            "mutable": true,
+            "mutable": false,
             "complexType": {
                 "original": "string",
                 "resolved": "string",
                 "references": {}
             },
-            "required": false,
-            "optional": false,
-            "docs": {
-                "tags": [],
-                "text": ""
-            },
-            "attribute": "name",
-            "reflect": false
-        },
-        "value": {
-            "type": "any",
-            "mutable": true,
-            "complexType": {
-                "original": "any",
-                "resolved": "any",
-                "references": {}
-            },
-            "required": false,
+            "required": true,
             "optional": false,
             "docs": {
                 "tags": [],
@@ -52,6 +38,24 @@ export class ERadio {
             },
             "attribute": "value",
             "reflect": false
+        },
+        "checked": {
+            "type": "boolean",
+            "mutable": true,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "checked",
+            "reflect": false,
+            "defaultValue": "false"
         }
     }; }
     static get events() { return [{
@@ -65,8 +69,8 @@ export class ERadio {
                 "text": ""
             },
             "complexType": {
-                "original": "any",
-                "resolved": "any",
+                "original": "void",
+                "resolved": "void",
                 "references": {}
             }
         }]; }

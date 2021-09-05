@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-5e231675.js';
+import { r as registerInstance, h } from './index-ba575c47.js';
 var SimpleConfig = /** @class */ (function () {
     function SimpleConfig(hostRef) {
         registerInstance(this, hostRef);

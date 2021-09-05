@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './index-5e231675.js';
+import { r as registerInstance, h, H as Host } from './index-ba575c47.js';
 var eFieldtreeCss = ":host{display:block}";
 var EFieldtree = /** @class */ (function () {
     function EFieldtree(hostRef) {

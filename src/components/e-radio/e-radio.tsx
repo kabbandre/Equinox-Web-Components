@@ -1,4 +1,4 @@
-import {Component, Event, EventEmitter, h, Prop} from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'e-radio',
@@ -6,12 +6,12 @@ import {Component, Event, EventEmitter, h, Prop} from '@stencil/core';
   shadow: true,
 })
 export class ERadio {
-  @Prop({ mutable: true }) name: string
-  @Prop({ mutable: true }) value: any
-  @Event() valueChanged: EventEmitter
-  valueChangedHandler(ev) {
-    this.value = ev.target ? ev.target.value : null
-    this.valueChanged.emit(this.value)
+  @Prop() value!: string;
+  @Prop({ mutable: true }) checked = false;
+  @Event() valueChanged!: EventEmitter<void>;
+  valueChangedHandler() {
+    this.checked = true;
+    this.valueChanged.emit();
   }
 
   render() {
@@ -20,7 +20,7 @@ export class ERadio {
         <slot>
           Eclipse
         </slot>
-        <input name={this.name} onInput={(ev) => this.valueChangedHandler(ev)} type="checkbox" />
+        <input checked={this.checked} onClick={this.valueChangedHandler.bind(this)} type="checkbox" />
         <span class="checkmark"/>
       </label>
     );

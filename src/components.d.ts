@@ -118,8 +118,11 @@ export namespace Components {
         "width": string;
     }
     interface ERadio {
-        "name": string;
-        "value": any;
+        "checked": boolean;
+        "value": string;
+    }
+    interface ERadioGroup {
+        "value"?: string;
     }
     interface EScroll {
     }
@@ -250,6 +253,12 @@ declare global {
         prototype: HTMLERadioElement;
         new (): HTMLERadioElement;
     };
+    interface HTMLERadioGroupElement extends Components.ERadioGroup, HTMLStencilElement {
+    }
+    var HTMLERadioGroupElement: {
+        prototype: HTMLERadioGroupElement;
+        new (): HTMLERadioGroupElement;
+    };
     interface HTMLEScrollElement extends Components.EScroll, HTMLStencilElement {
     }
     var HTMLEScrollElement: {
@@ -307,6 +316,7 @@ declare global {
         "e-menu": HTMLEMenuElement;
         "e-progress": HTMLEProgressElement;
         "e-radio": HTMLERadioElement;
+        "e-radio-group": HTMLERadioGroupElement;
         "e-scroll": HTMLEScrollElement;
         "e-select": HTMLESelectElement;
         "e-snip": HTMLESnipElement;
@@ -435,9 +445,13 @@ declare namespace LocalJSX {
         "width"?: string;
     }
     interface ERadio {
-        "name"?: string;
-        "onValueChanged"?: (event: CustomEvent<any>) => void;
-        "value"?: any;
+        "checked"?: boolean;
+        "onValueChanged"?: (event: CustomEvent<void>) => void;
+        "value": string;
+    }
+    interface ERadioGroup {
+        "onValueChanged"?: (event: CustomEvent<void>) => void;
+        "value"?: string;
     }
     interface EScroll {
     }
@@ -498,6 +512,7 @@ declare namespace LocalJSX {
         "e-menu": EMenu;
         "e-progress": EProgress;
         "e-radio": ERadio;
+        "e-radio-group": ERadioGroup;
         "e-scroll": EScroll;
         "e-select": ESelect;
         "e-snip": ESnip;
@@ -525,6 +540,7 @@ declare module "@stencil/core" {
             "e-menu": LocalJSX.EMenu & JSXBase.HTMLAttributes<HTMLEMenuElement>;
             "e-progress": LocalJSX.EProgress & JSXBase.HTMLAttributes<HTMLEProgressElement>;
             "e-radio": LocalJSX.ERadio & JSXBase.HTMLAttributes<HTMLERadioElement>;
+            "e-radio-group": LocalJSX.ERadioGroup & JSXBase.HTMLAttributes<HTMLERadioGroupElement>;
             "e-scroll": LocalJSX.EScroll & JSXBase.HTMLAttributes<HTMLEScrollElement>;
             "e-select": LocalJSX.ESelect & JSXBase.HTMLAttributes<HTMLESelectElement>;
             "e-snip": LocalJSX.ESnip & JSXBase.HTMLAttributes<HTMLESnipElement>;

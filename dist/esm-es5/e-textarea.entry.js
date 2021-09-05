@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './index-5e231675.js';
+import { r as registerInstance, h, H as Host } from './index-ba575c47.js';
 var eTextareaCss = ":host{display:block}";
 var ETextarea = /** @class */ (function () {
     function ETextarea(hostRef) {

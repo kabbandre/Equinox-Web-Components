@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-2df85821.js');
+const index = require('./index-977a8e5f.js');
 
 const eMenuCss = ":host{display:block}";
 

@@ -14,6 +14,7 @@
     "./components/e-menu/e-menu.js",
     "./components/e-progress/e-progress.js",
     "./components/e-radio/e-radio.js",
+    "./components/e-radio-group/e-radio-group.js",
     "./components/e-scroll/e-scroll.js",
     "./components/e-select/e-select.js",
     "./components/e-snip/e-snip.js",
