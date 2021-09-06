@@ -81,11 +81,14 @@ export namespace Components {
     }
     interface EExpand {
         "elevation": string;
+        "hideButtonIcon": string;
         "hideButtonText": string;
         "maxHeight": string;
+        "openButtonIcon": string;
         "openButtonText": string;
     }
     interface EFieldtree {
+        "fields": string;
     }
     interface EIcon {
         /**
@@ -129,46 +132,8 @@ export namespace Components {
     interface ERadioGroup {
         "value"?: string;
     }
-    interface EScroll {
-    }
-    interface ESelect {
-    }
-    interface ESnip {
-    }
     interface ETabs {
         "tabs": string;
-    }
-    interface ETextarea {
-    }
-    interface SimpleConfig {
-        /**
-          * A simple number field
-         */
-        "aNumber": number;
-        /**
-          * Another number field
-         */
-        "bNumber": number;
-        /**
-          * A string field which represents a color
-         */
-        "backgroundColor": string;
-        /**
-          * A boolean field
-         */
-        "isChecked": boolean;
-        /**
-          * A poorly named field which should hold a color value
-         */
-        "poorlyNamedProp": string;
-        /**
-          * A simple text field
-         */
-        "simpleText": string;
-        /**
-          * A date field
-         */
-        "startDate": string;
     }
 }
 declare global {
@@ -262,41 +227,11 @@ declare global {
         prototype: HTMLERadioGroupElement;
         new (): HTMLERadioGroupElement;
     };
-    interface HTMLEScrollElement extends Components.EScroll, HTMLStencilElement {
-    }
-    var HTMLEScrollElement: {
-        prototype: HTMLEScrollElement;
-        new (): HTMLEScrollElement;
-    };
-    interface HTMLESelectElement extends Components.ESelect, HTMLStencilElement {
-    }
-    var HTMLESelectElement: {
-        prototype: HTMLESelectElement;
-        new (): HTMLESelectElement;
-    };
-    interface HTMLESnipElement extends Components.ESnip, HTMLStencilElement {
-    }
-    var HTMLESnipElement: {
-        prototype: HTMLESnipElement;
-        new (): HTMLESnipElement;
-    };
     interface HTMLETabsElement extends Components.ETabs, HTMLStencilElement {
     }
     var HTMLETabsElement: {
         prototype: HTMLETabsElement;
         new (): HTMLETabsElement;
-    };
-    interface HTMLETextareaElement extends Components.ETextarea, HTMLStencilElement {
-    }
-    var HTMLETextareaElement: {
-        prototype: HTMLETextareaElement;
-        new (): HTMLETextareaElement;
-    };
-    interface HTMLSimpleConfigElement extends Components.SimpleConfig, HTMLStencilElement {
-    }
-    var HTMLSimpleConfigElement: {
-        prototype: HTMLSimpleConfigElement;
-        new (): HTMLSimpleConfigElement;
     };
     interface HTMLElementTagNameMap {
         "e-avatar": HTMLEAvatarElement;
@@ -314,12 +249,7 @@ declare global {
         "e-progress": HTMLEProgressElement;
         "e-radio": HTMLERadioElement;
         "e-radio-group": HTMLERadioGroupElement;
-        "e-scroll": HTMLEScrollElement;
-        "e-select": HTMLESelectElement;
-        "e-snip": HTMLESnipElement;
         "e-tabs": HTMLETabsElement;
-        "e-textarea": HTMLETextareaElement;
-        "simple-config": HTMLSimpleConfigElement;
     }
 }
 declare namespace LocalJSX {
@@ -403,11 +333,14 @@ declare namespace LocalJSX {
     }
     interface EExpand {
         "elevation"?: string;
+        "hideButtonIcon"?: string;
         "hideButtonText"?: string;
         "maxHeight"?: string;
+        "openButtonIcon"?: string;
         "openButtonText"?: string;
     }
     interface EFieldtree {
+        "fields"?: string;
     }
     interface EIcon {
         /**
@@ -454,47 +387,9 @@ declare namespace LocalJSX {
         "onValueChanged"?: (event: CustomEvent<void>) => void;
         "value"?: string;
     }
-    interface EScroll {
-    }
-    interface ESelect {
-    }
-    interface ESnip {
-    }
     interface ETabs {
         "onTabSelected"?: (event: CustomEvent<Tab>) => void;
         "tabs"?: string;
-    }
-    interface ETextarea {
-    }
-    interface SimpleConfig {
-        /**
-          * A simple number field
-         */
-        "aNumber"?: number;
-        /**
-          * Another number field
-         */
-        "bNumber"?: number;
-        /**
-          * A string field which represents a color
-         */
-        "backgroundColor"?: string;
-        /**
-          * A boolean field
-         */
-        "isChecked"?: boolean;
-        /**
-          * A poorly named field which should hold a color value
-         */
-        "poorlyNamedProp"?: string;
-        /**
-          * A simple text field
-         */
-        "simpleText"?: string;
-        /**
-          * A date field
-         */
-        "startDate"?: string;
     }
     interface IntrinsicElements {
         "e-avatar": EAvatar;
@@ -512,12 +407,7 @@ declare namespace LocalJSX {
         "e-progress": EProgress;
         "e-radio": ERadio;
         "e-radio-group": ERadioGroup;
-        "e-scroll": EScroll;
-        "e-select": ESelect;
-        "e-snip": ESnip;
         "e-tabs": ETabs;
-        "e-textarea": ETextarea;
-        "simple-config": SimpleConfig;
     }
 }
 export { LocalJSX as JSX };
@@ -539,12 +429,7 @@ declare module "@stencil/core" {
             "e-progress": LocalJSX.EProgress & JSXBase.HTMLAttributes<HTMLEProgressElement>;
             "e-radio": LocalJSX.ERadio & JSXBase.HTMLAttributes<HTMLERadioElement>;
             "e-radio-group": LocalJSX.ERadioGroup & JSXBase.HTMLAttributes<HTMLERadioGroupElement>;
-            "e-scroll": LocalJSX.EScroll & JSXBase.HTMLAttributes<HTMLEScrollElement>;
-            "e-select": LocalJSX.ESelect & JSXBase.HTMLAttributes<HTMLESelectElement>;
-            "e-snip": LocalJSX.ESnip & JSXBase.HTMLAttributes<HTMLESnipElement>;
             "e-tabs": LocalJSX.ETabs & JSXBase.HTMLAttributes<HTMLETabsElement>;
-            "e-textarea": LocalJSX.ETextarea & JSXBase.HTMLAttributes<HTMLETextareaElement>;
-            "simple-config": LocalJSX.SimpleConfig & JSXBase.HTMLAttributes<HTMLSimpleConfigElement>;
         }
     }
 }

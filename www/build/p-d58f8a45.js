@@ -1,0 +1,1 @@
+const n=n=>n?n.split(" ").length>=2?n.match(/\b(\w)/g).join(""):n.substr(0,2):"",o=(n,o="unknown")=>{try{return n=n.split("&quot;").join('"'),JSON.parse(n)}catch(r){console.log(n,r),alert(`Error while trying to parse JSON in ${o} component`)}};export{o as d,n as g}

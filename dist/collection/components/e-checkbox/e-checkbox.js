@@ -18,6 +18,12 @@ export class ECheckbox {
             this.valueChanged.emit(checked ? this.trueValue : this.falseValue);
         }
     }
+    connectedCallback() {
+        this.valueChangedHandler(this.value);
+    }
+    componentDidLoad() {
+        this.valueChangedHandler(this.value);
+    }
     render() {
         return (h("label", { class: this.classes() },
             h("slot", null),

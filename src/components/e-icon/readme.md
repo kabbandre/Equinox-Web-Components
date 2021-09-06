@@ -22,6 +22,7 @@
  - [e-chip](../e-chip)
  - [e-collapse](../e-collapse)
  - [e-expand](../e-expand)
+ - [e-fieldtree](../e-fieldtree)
  - [e-input](../e-input)
 
 ### Graph
@@ -31,6 +32,7 @@ graph TD;
   e-chip --> e-icon
   e-collapse --> e-icon
   e-expand --> e-icon
+  e-fieldtree --> e-icon
   e-input --> e-icon
   style e-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

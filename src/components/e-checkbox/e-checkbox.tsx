@@ -31,6 +31,13 @@ export class ECheckbox {
     container: true
   })
 
+  connectedCallback() {
+    this.valueChangedHandler(this.value);
+  }
+  componentDidLoad() {
+    this.valueChangedHandler(this.value);
+  }
+
   render() {
     return (
       <label class={this.classes()}>

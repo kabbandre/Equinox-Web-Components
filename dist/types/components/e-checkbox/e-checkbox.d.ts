@@ -12,6 +12,8 @@ export declare class ECheckbox {
     disabled: boolean;
     type: "checkbox" | "switch";
     private classes;
+    connectedCallback(): void;
+    componentDidLoad(): void;
     render(): any;
 }
 export {};

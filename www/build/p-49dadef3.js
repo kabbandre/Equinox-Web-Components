@@ -1,0 +1,1 @@
+const o=o=>o?o.split(" ").length>=2?o.match(/\b(\w)/g).join(""):o.substr(0,2):"",n=(o,n="unknown")=>{try{return o=o.split("&quot;").join('"'),JSON.parse(o)}catch(t){console.log(o,t),alert(`Error while trying to parse JSON in ${n} component`)}},t=(o,n,r)=>{o[n]===r&&console.log(o);for(const e in o)"object"==typeof o[e]&&t(o[e],n,r)};export{n as d,t as f,o as g}

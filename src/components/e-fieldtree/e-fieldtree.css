@@ -1,3 +1,16 @@
 :host {
   display: block;
 }
+
+.branch-open {
+  position: relative;
+}
+.branch-open:before {
+  position: absolute;
+  height: calc(100% - 28px);
+  width: 1px;
+  content: '';
+  left: 12px;
+  top: 28px;
+  background: var(--gray-300);
+}

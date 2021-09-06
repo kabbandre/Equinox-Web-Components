@@ -23,6 +23,12 @@ const ECheckbox = class {
             this.valueChanged.emit(checked ? this.trueValue : this.falseValue);
         }
     }
+    connectedCallback() {
+        this.valueChangedHandler(this.value);
+    }
+    componentDidLoad() {
+        this.valueChangedHandler(this.value);
+    }
     render() {
         return (h("label", { class: this.classes() }, h("slot", null), h("input", { checked: this.value, ref: el => this.checkboxInput = el, onChange: () => this.valueChangedHandler(this.checkboxInput.checked), type: "checkbox" }), h("span", { class: "checkmark" })));
     }

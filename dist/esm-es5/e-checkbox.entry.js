@@ -26,6 +26,12 @@ var ECheckbox = /** @class */ (function () {
             this.valueChanged.emit(checked ? this.trueValue : this.falseValue);
         }
     };
+    ECheckbox.prototype.connectedCallback = function () {
+        this.valueChangedHandler(this.value);
+    };
+    ECheckbox.prototype.componentDidLoad = function () {
+        this.valueChangedHandler(this.value);
+    };
     ECheckbox.prototype.render = function () {
         var _this = this;
         return (h("label", { class: this.classes() }, h("slot", null), h("input", { checked: this.value, ref: function (el) { return _this.checkboxInput = el; }, onChange: function () { return _this.valueChangedHandler(_this.checkboxInput.checked); }, type: "checkbox" }), h("span", { class: "checkmark" })));

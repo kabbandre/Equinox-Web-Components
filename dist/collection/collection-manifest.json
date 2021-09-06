@@ -15,12 +15,7 @@
     "./components/e-progress/e-progress.js",
     "./components/e-radio/e-radio.js",
     "./components/e-radio-group/e-radio-group.js",
-    "./components/e-scroll/e-scroll.js",
-    "./components/e-select/e-select.js",
-    "./components/e-snip/e-snip.js",
-    "./components/e-tabs/e-tabs.js",
-    "./components/e-textarea/e-textarea.js",
-    "./components/simple-config/simple-config.js"
+    "./components/e-tabs/e-tabs.js"
   ],
   "compiler": {
     "name": "@stencil/core",
